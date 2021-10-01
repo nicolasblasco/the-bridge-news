@@ -1,0 +1,66 @@
+body {
+    font-family: 'Gemunu Libre', sans-serif;
+}
+
+
+#container {
+    display: flex;
+    flex-direction: column;
+}
+
+/*---- Basic elements ----*/
+
+h1 {
+    color: #ffffff;
+}
+
+#vbar {
+    color:#c72c41;
+}
+
+#slogan {
+    color: #ee4540;
+}
+
+.content-links {
+    text-decoration: none;
+}
+
+.content-links:visited {
+    color: #1e2b33;
+}
+
+
+/*------ Header -----*/
+
+header {
+    display: flex;
+    color: #ffffff;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    background-color: #2d142c
+}
+
+/*-----Navbar-----*/
+
+nav {
+    background-color: #510a32;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    height: 2rem;
+    align-items: center;
+}
+
+.nav-links {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.nav-links:hover {
+    color:#ee4540;
+}
