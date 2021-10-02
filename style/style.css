@@ -13,48 +13,57 @@ body {
 /*---- Basic elements ----*/
 
 h1 {
-    
+    color: #FFFFFF;
 }
 
-h2 {
-    color: #ee4540;
+h2, h3 {
+    color: #EE4540; 
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-#vbar {
-    color:#c72c41;
+h4 {
+    color: #EE4540; 
 }
 
-#slogan {
-    color: #ee4540;
-    text-transform: lowercase;
+p {
+    color: #FFFFFF;
 }
 
 .content-links, .s-content-links {
     text-decoration: none;
-    color: #ffffff;
+    color: inherit;
 }
 
-.content-links:visited {
-    
+.content-links:visited, .s-content-links:visited {
+   color: inherit;
 }
 
-
-.s-content-links:hover {
-    text-decoration: solid;
+img {
+    width: 100%;
+    border: 1px #1E2328 solid;
 }
 
-/*------ Header -----*/
+/* ----- Header -----*/
 
 header {
     display: flex;
-    color: #ffffff;
+    color: #FFFFFF;;
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
     background-color: #1E2328;
 }
 
-/*-----Navbar-----*/
+#vbar {
+    color: #EE4540;
+}
+
+#slogan {
+    color: #C72C41;
+    text-transform: lowercase;
+}
+
+/*------ Navbar ------*/
 
 nav {
     background-color: #2A2E34;
@@ -93,11 +102,8 @@ nav ul {
     flex-grow: 1;
     margin: 1rem;
     padding: 1rem;
+    border: 1px #1E2328 solid;
     background-color: #c72c41;
-}
-
-img {
-    width: 100%;
 }
 
 /*----Sub Content----*/ 
@@ -108,7 +114,7 @@ img {
     margin: 0 1rem;
     background-color:#c72c41;
     margin-bottom: 1rem;
-    
+    border: 1px #1E2328 solid;
 }
 
 #sub-content > div {
@@ -116,34 +122,44 @@ img {
     flex-grow: 1;
     margin: 1rem;
     padding: 1rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px #1E2328 solid;
 }
 
 .s-content-1 {
     background-image: url(../images/windows-11.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    
 }
 
 .s-content-2 {
     background-image: url(../images/lakers.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top;
+    
 }
 
 .s-content-3 {
     background-image: url(../images/tik-tok.jpeg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    
 }
 
 .s-content-4 {
     background-image: url(../images/google.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    
+}
+
+/*----- Ads -----*/
+
+#ads {
+    display: flex;
+    margin: 0 1rem 1rem 1rem;
+    background-color:#c72c41;
+    justify-content: center;
+}
+
+#ads > div {
+    margin: 1rem;
+    padding: 1rem;
 }
 
 /*---- Footer----*/
@@ -167,36 +183,4 @@ footer ul li {
     opacity: 0.5;
 }
 
-#ads {
-    display: flex;
-    margin: 0 1rem 1rem 1rem;
-    background-color:#c72c41;
-    justify-content: center;
-}
 
-#ads > div {
-    margin: 1rem;
-    padding: 1rem;
-}
-
-/*-----Media queries----*/ 
-
-@media only screen and (min-width: 600px) {
-    #bars {
-        display: none;
-      /*
-      visibility: hidden;
-      */
-    }
-  }
-
-  @media only screen and (max-width: 600px) {
-    #vbar, #slogan {
-        display: none;
-    }
-
-    nav {
-        display: none;
-    }
-
-  }
