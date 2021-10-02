@@ -1,6 +1,6 @@
 body {
-    font-family: 'Gemunu Libre', sans-serif;
-    background-color:#b01336;
+    font-family: 'Orbitron', sans-serif;
+    background-color:#B01336;
     box-sizing: content-box;
 }
 
@@ -12,8 +12,12 @@ body {
 
 /*---- Basic elements ----*/
 
-h2 a .content-links {
-    color: #ffffff;
+h1 {
+    
+}
+
+h2 {
+    color: #ee4540;
 }
 
 #vbar {
@@ -22,14 +26,21 @@ h2 a .content-links {
 
 #slogan {
     color: #ee4540;
+    text-transform: lowercase;
 }
 
-.content-links {
+.content-links, .s-content-links {
     text-decoration: none;
+    color: #ffffff;
 }
 
 .content-links:visited {
-    color: #ffffff;
+    
+}
+
+
+.s-content-links:hover {
+    text-decoration: solid;
 }
 
 /*------ Header -----*/
@@ -40,13 +51,13 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
-    background-color: #2d142c;
+    background-color: #1E2328;
 }
 
 /*-----Navbar-----*/
 
 nav {
-    background-color: #510a32;
+    background-color: #2A2E34;
 }
 
 nav ul {
@@ -73,15 +84,11 @@ nav ul {
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
-    background-color:#b01336;
-    align-items: center;
 }
 
 #main-content > div {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-self: center;
     flex-basis: 30rem;
     flex-grow: 1;
     margin: 1rem;
@@ -142,7 +149,7 @@ img {
 /*---- Footer----*/
 
 footer {
-    background-color: #2d142c;
+    background-color: #1E2328;
     color: #ffffff;
     
 }
@@ -160,6 +167,17 @@ footer ul li {
     opacity: 0.5;
 }
 
+#ads {
+    display: flex;
+    margin: 0 1rem 1rem 1rem;
+    background-color:#c72c41;
+    justify-content: center;
+}
+
+#ads > div {
+    margin: 1rem;
+    padding: 1rem;
+}
 
 /*-----Media queries----*/ 
 
@@ -177,10 +195,8 @@ footer ul li {
         display: none;
     }
 
-  }
-/*
-  @media (min-width: 480px) {
-    .img-1 {
-        max-width: 100%;
+    nav {
+        display: none;
     }
-    */
+
+  }
