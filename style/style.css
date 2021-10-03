@@ -1,5 +1,5 @@
 body {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Stick No Bills', sans-serif;
     background-color:#B01336;
     box-sizing: content-box;
 }
@@ -13,19 +13,18 @@ body {
 /*---- Basic elements ----*/
 
 h1 {
+    font-size: 2em;
     color: #FFFFFF;
 }
 
 h2, h3 {
-    color: #EE4540; 
+    font-size: 1.5em;
+    color: #FFFFFF; 
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-h4 {
-    color: #EE4540; 
-}
-
 p {
+    font-size: 1em;
     color: #FFFFFF;
 }
 
@@ -78,6 +77,10 @@ nav ul {
     align-items: center;
 }
 
+nav ul li {
+    font-size: 1.5em;
+}
+
 .nav-links {
     text-decoration: none;
     color: #ffffff;
@@ -99,6 +102,7 @@ nav ul {
 #main-content > article {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     flex-basis: 30rem;
     flex-grow: 1;
     margin: 1rem;

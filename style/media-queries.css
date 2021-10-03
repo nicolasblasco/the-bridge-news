@@ -1,8 +1,17 @@
 @media only screen and (max-width: 600px) {
 
-    body {
-        
-    }
+  h1 {
+    font-size: 1em;
+}
+
+h2, h3 {
+    font-size: 0.75em;
+}
+
+p {
+    font-size: 0.5em;
+    
+}
 
     #vbar, #slogan {
         display: none;
@@ -16,9 +25,7 @@
 
   @media only screen and (min-width: 601px) {
 
-    body {
-        
-    }
+    
 
     #bars {
         display: none;
@@ -28,10 +35,9 @@
 
   @media only screen and (min-width: 768px) {
 
-    body {
-        
-    }
+   
 
   }
 
 
+  
