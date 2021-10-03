@@ -13,18 +13,18 @@ body {
 /*---- Basic elements ----*/
 
 h1 {
-    font-size: 2em;
+    font-size: 1.7em;
     color: #FFFFFF;
 }
 
 h2, h3 {
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: #FFFFFF; 
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 p {
-    font-size: 1em;
+    font-size: 0.8em;
     color: #FFFFFF;
 }
 
@@ -76,9 +76,8 @@ nav ul {
     height: 2rem;
     align-items: center;
 }
-
 nav ul li {
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 .nav-links {
