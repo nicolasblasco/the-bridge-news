@@ -39,7 +39,8 @@ p {
 }
 
 img {
-    width: 100%;
+    height: auto;
+    max-width: 100%;
     border: 1px #1E2328 solid;
 }
 
@@ -95,7 +96,7 @@ nav ul {
     flex-wrap: wrap;
 }
 
-#main-content > div {
+#main-content > article {
     display: flex;
     flex-direction: column;
     flex-basis: 30rem;
@@ -117,35 +118,33 @@ nav ul {
     border: 1px #1E2328 solid;
 }
 
-#sub-content > div {
+#sub-content > article {
     flex-basis: 15rem;
     flex-grow: 1;
     margin: 1rem;
     padding: 1rem;
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     border: 1px #1E2328 solid;
 }
 
 .s-content-1 {
     background-image: url(../images/windows-11.jpg);
+    background-position: bottom;
     
 }
 
 .s-content-2 {
     background-image: url(../images/lakers.jpg);
-    
 }
 
 .s-content-3 {
     background-image: url(../images/tik-tok.jpeg);
-    
+    background-position: center;
 }
 
 .s-content-4 {
     background-image: url(../images/google.jpg);
-    
+    background-position: center;
 }
 
 /*----- Ads -----*/
@@ -155,11 +154,13 @@ nav ul {
     margin: 0 1rem 1rem 1rem;
     background-color:#c72c41;
     justify-content: center;
+    border: 1px #1E2328 solid;
 }
 
 #ads > div {
     margin: 1rem;
     padding: 1rem;
+    border: 1px #1E2328 solid;
 }
 
 /*---- Footer----*/
@@ -167,7 +168,8 @@ nav ul {
 footer {
     background-color: #1E2328;
     color: #ffffff;
-    
+    display: flex;
+    flex-direction: column;
 }
 
 footer ul {
