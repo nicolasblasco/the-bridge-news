@@ -2,21 +2,17 @@
 
 ## Project
 
-Weekly problems of the Radium Rocket Course "Become a Software Developer"  
+3rd week project for the 'Become a Software Developer' Radium Rocket's course
 
-## Description
+## Description 
 
-**Third Week:** 
-
-Create the cover of a newspaper (main page) using FlexBox as the main tool for creating an adaptable design following the Mobile First concept.
-
-This project was created with HTML & CSS. 
+The objetive was to create the cover of a newspaper (main page) using FlexBox as the main tool for creating an adaptable design following the Mobile First concept.
 
 ## Resolution 
 
-Github Pages: https://nicolasblasco.github.io/the-bridge-news/
+This project was created with HTML & CSS. 
 
-## Notes
+You can see the result with Github Pages: https://nicolasblasco.github.io/the-bridge-news/
 
 ## Contributors
 
