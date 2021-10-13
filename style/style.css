@@ -29,7 +29,7 @@ h5 {
     font-size: 0.8em;
 }
 
-p {
+p, label {
     font-size: 0.8em;
     color: #FFFFFF;
 }
@@ -218,21 +218,14 @@ form {
     margin: 1em 1em;
     background-color: #c72c41;
 }
-/*
+
 label {
     margin-bottom: 0.5em;
 }
-*/
 
 #form-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
-/*
-.form-group {
-    display: flex;
-    flex-direction: column;
-    margin: 1em;
-}
-*/
+
