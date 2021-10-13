@@ -217,8 +217,8 @@ footer ul li {
 form {
     display: flex;
     flex-direction: column;
-    margin: 1em 6em;
-    padding: 1em;
+    margin: 0.5em 3em;
+    padding: 0.5em;
     background-color: #c72c41;
 }
 
