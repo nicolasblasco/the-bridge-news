@@ -19,6 +19,7 @@ The objetivo was to create a subscription page for the newspaper that we created
 This project was created with HTML, CSS & JavaScript. 
 
 Newspaper: https://nicolasblasco.github.io/the-bridge-news/
+
 Subscription Page: https://nicolasblasco.github.io/the-bridge-news/sub-page
 
 ## Contributors
