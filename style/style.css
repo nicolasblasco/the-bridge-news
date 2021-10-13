@@ -226,15 +226,18 @@ label {
 }
 
 input {
+    width: 100%;
     border: 0em;
     border-radius: 0.2em;
+    font-size: 0.8em;
+    color: #1E2328;
 }
 
 #h2-sub-page-link {
-    text-align: center;
     margin: 0;
     padding: 0.5em 0;
-    background-color:#C72C41 ;
+    background-color:#C72C41;
+    text-align: center;
 }
 
 #h2-sub-page {
