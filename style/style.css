@@ -217,6 +217,8 @@ footer ul li {
 form {
     margin: 1em 5em;
     background-color: #c72c41;
+    display: flex;
+    flex-direction: column;
 }
 
 label {
@@ -240,4 +242,12 @@ label {
     display: flex;
     flex-direction: column;
     padding: 1em;
+}
+
+.button {
+    text-align: center;
+    margin: 1em;
+    padding: 1em;
+    background-color: #1E2328;
+    color: #FFFFFF;
 }
