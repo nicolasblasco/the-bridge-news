@@ -218,6 +218,7 @@ form {
     display: flex;
     flex-direction: column;
     margin: 1em 6em;
+    padding: 1em;
     background-color: #c72c41;
 }
 
@@ -269,7 +270,7 @@ input {
 
 .button {
     align-self: center;
-    margin: 1em;
+    margin-top: 1em;
     padding: 1em;
     background-color: #1E2328;
     font-size: 0.8em;
