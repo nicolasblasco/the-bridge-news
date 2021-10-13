@@ -29,7 +29,7 @@ h5 {
     font-size: 0.8em;
 }
 
-p, label, .button {
+p {
     font-size: 0.8em;
     color: #FFFFFF;
 }
@@ -217,12 +217,14 @@ footer ul li {
 form {
     display: flex;
     flex-direction: column;
-    margin: 1em 5em;
+    margin: 1em 6em;
     background-color: #c72c41;
 }
 
 label {
     margin-bottom: 0.5em;
+    font-size: 0.8em;
+    color: #FFFFFF;
 }
 
 input {
@@ -241,7 +243,8 @@ input {
 }
 
 #h2-sub-page {
-    margin: 1em 0 0 5em;
+    margin: 1em 0;
+    text-align: center;
 }
 
 #form-container {
@@ -254,6 +257,7 @@ input {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    flex-basis: 15em;
     padding: 0 1em;
 }
 
@@ -264,9 +268,11 @@ input {
 }
 
 .button {
+    align-self: center;
     margin: 1em;
     padding: 1em;
     background-color: #1E2328;
+    font-size: 0.8em;
     border: 0em;
     border-radius: 0.5em;
     color: #FFFFFF;
