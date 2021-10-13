@@ -29,7 +29,7 @@ h5 {
     font-size: 0.8em;
 }
 
-p, label {
+p, label, .button {
     font-size: 0.8em;
     color: #FFFFFF;
 }
