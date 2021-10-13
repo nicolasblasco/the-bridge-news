@@ -34,12 +34,12 @@ p, label {
     color: #FFFFFF;
 }
 
-.content-links, .s-content-links {
+.header-link, .content-links, .s-content-links {
     text-decoration: none;
     color: inherit;
 }
 
-.content-links:visited, .s-content-links:visited {
+.header-link:visited, .content-links:visited, .s-content-links:visited {
    color: inherit;
 }
 
@@ -215,14 +215,23 @@ footer ul li {
 /*----- Sub Page -----*/
 
 form {
-    margin: 1em 5em;
-    background-color: #c72c41;
     display: flex;
     flex-direction: column;
+    margin: 1em 5em;
+    background-color: #c72c41;
 }
 
 label {
     margin-bottom: 0.5em;
+}
+
+input {
+    border: 0em;
+    border-radius: 0.2em;
+}
+
+#h2-sub-page {
+    margin: 1em 0 0 5em;
 }
 
 #form-container {
@@ -232,10 +241,10 @@ label {
 }
 
 .form-column {
-    padding: 0 1em;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    padding: 0 1em;
 }
 
 .form-group {
@@ -245,9 +254,12 @@ label {
 }
 
 .button {
-    text-align: center;
     margin: 1em;
     padding: 1em;
     background-color: #1E2328;
+    border: 0em;
+    border-radius: 0.5em;
     color: #FFFFFF;
 }
+
+
