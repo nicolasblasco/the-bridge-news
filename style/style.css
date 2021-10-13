@@ -34,12 +34,12 @@ p, label, .button {
     color: #FFFFFF;
 }
 
-.header-link, .content-links, .s-content-links {
+.header-link, .content-links, .s-content-links, .sub-page-link {
     text-decoration: none;
     color: inherit;
 }
 
-.header-link:visited, .content-links:visited, .s-content-links:visited {
+.header-link:visited, .content-links:visited, .s-content-links:visited, .sub-page-link:visited {
    color: inherit;
 }
 
@@ -228,6 +228,13 @@ label {
 input {
     border: 0em;
     border-radius: 0.2em;
+}
+
+#h2-sub-page-link {
+    text-align: center;
+    margin: 0;
+    padding: 0.5em 0;
+    background-color:#C72C41 ;
 }
 
 #h2-sub-page {
