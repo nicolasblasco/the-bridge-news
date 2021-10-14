@@ -268,7 +268,7 @@ input {
     padding: 0 1em;
 }
 
-.form-group {
+.fields {
     display: flex;
     flex-direction: column;
     padding: 1em;
