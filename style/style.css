@@ -236,10 +236,11 @@ input {
     color: #1E2328;
 }
 
-.val-input {
+.input-val {
     margin-top: 0.5em;
     font-size: 0.8em;
     color:#1E2328;
+    display: none;
 }
 
 #h2-sub-page-link {
