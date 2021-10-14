@@ -5,7 +5,7 @@ var fullNameVal = document.getElementById('name-val');
 fullName.addEventListener('blur', fullNameBlur);
 fullName.addEventListener('focus', fullNameFocus);
 function fullNameBlur(e) {
-    var x = fullName.value;
+    var x = fullName.value; //FIX: at least 6 letters without counting blank spaces
     if(x.length < 6 || x.indexOf(' ') == -1) {
         fullNameVal.style.opacity = '1';
     } 
@@ -60,4 +60,17 @@ function phoneNumberFocus(e) {
 
 // ID validation
 
+var id = document.getElementById('id-input');
+var idVal = document.getElementById('id-val');
+id.addEventListener('blur', idBlur);
+id.addEventListener('focus', idFocus);
+function idBlur(e) {
+    var x = id.value;
+    if(x.length < 7 || x.length > 8 || isNaN(x)) {
+        idVal.style.opacity = '1';
+    } 
+}
+function idFocus(e) {
+    idVal.style.opacity = '0';
+}
 
