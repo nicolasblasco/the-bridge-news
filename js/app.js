@@ -204,3 +204,16 @@ function clickEvent(e) {
         alert(errorArray.join("  "));
     }
 }
+
+// Autocomplete Name
+
+var autoCompleteName = document.getElementById('name-input');
+autoCompleteName.addEventListener('keypress',autoCompleteEvent);
+autoCompleteName.addEventListener('focus',autoCompleteEvent);
+function autoCompleteEvent(e) {
+    var text = e.target.value;
+    console.log(text);
+    var titleName = document.getElementById('h3-sub-page');
+    titleName.innerHTML = 'Hello ' + text + ' !';
+}
+
