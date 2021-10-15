@@ -40,7 +40,7 @@ function emailFocus(e) {
 }
 
 // Password validation
-// FIX: no usar expresiones regulares [0-9]
+
 var password = document.getElementById('password-input');
 var passwordVal = document.getElementById('password-val');
 password.addEventListener('blur', passwordBlur);
@@ -143,7 +143,7 @@ city.addEventListener('blur', cityBlur);
 city.addEventListener('focus', cityFocus);
 function cityBlur(e) {
     var x = city.value;
-    if(x.length < 3) {
+    if(x.length < 3 || x.search(/\W/) != -1) {
         cityVal.style.opacity = '1';
         errorArray.push('Wrong city format' + '\n');
     } else {
@@ -155,7 +155,6 @@ function cityFocus(e) {
 }
 
 // Postal code validation 
-//Validar caracteres especiales
 
 var postalCode = document.getElementById('postal-code-input');
 var postalCodeVal = document.getElementById('postal-code-val');
@@ -163,7 +162,7 @@ postalCode.addEventListener('blur', postalCodeBlur);
 postalCode.addEventListener('focus', postalCodeFocus);
 function postalCodeBlur(e) {
     var x = postalCode.value;
-    if(x.length < 3) {
+    if(x.length < 3 || x.search(/\W/) != -1) {
         postalCodeVal.style.opacity = '1';
         errorArray.push('Wrong postal code format' + '\n');
     } else {
@@ -193,7 +192,7 @@ function idFocus(e) {
     idVal.style.opacity = '0';
 }
 
-// Register & errors
+// Register button  
 
 var button = document.getElementById('button');
 button.addEventListener('click',clickEvent);
