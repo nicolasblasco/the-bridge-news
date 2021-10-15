@@ -1,4 +1,4 @@
-// Full name validation 
+// Full email validation 
 //FIX: at least 6 letters without counting blank spaces
 
 var fullName = document.getElementById('name-input');
@@ -17,7 +17,19 @@ function fullNameFocus(e) {
 
 // Email validation
 
-
+var email = document.getElementById('email-input');
+var emailVal = document.getElementById('email-val');
+email.addEventListener('blur', emailBlur);
+email.addEventListener('focus', emailFocus);
+function emailBlur(e) {
+    var x = email.value; 
+    if( x.indexOf('@') == -1 || x.indexOf('.') == -1) {
+        emailVal.style.opacity = '1';
+    } 
+}
+function emailFocus(e) {
+    emailVal.style.opacity = '0';
+}
 
 // Password validation
 
@@ -43,6 +55,7 @@ function ageBlur(e) {
 function ageFocus(e) {
     ageVal.style.opacity = '0';
 }
+//you can use Number.isInteger 
 
 
 // Phone number validation
