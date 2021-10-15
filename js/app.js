@@ -11,9 +11,9 @@ function fullNameBlur(e) {
     var x = fullName.value; 
     if(x.length < 7 || x.indexOf(' ') <= 0 || x.indexOf(' ') == x.length -1) {
         fullNameVal.style.opacity = '1';
-        errorArray.push('Wrong full name format');
+        errorArray.push('Wrong full name format' + '\n');
     } else {
-        registerArray.push('Full name: ' + x);
+        registerArray.push('Full name: ' + x + '\n');
     }
 }
 function fullNameFocus(e) {
@@ -30,9 +30,9 @@ function emailBlur(e) {
     var x = email.value; 
     if( x.indexOf('@') == -1 || x.indexOf('.') == -1 || x.includes(' ') == true || x.indexOf('@') == 0 || x.indexOf('.') == email.length - 1) {
         emailVal.style.opacity = '1';
-        errorArray.push('Wrong email format');
+        errorArray.push('Wrong email format' + '\n');
     } else {
-        registerArray.push('Email: ' + x);
+        registerArray.push('Email: ' + x + '\n');
     }
 }
 function emailFocus(e) {
@@ -49,9 +49,9 @@ function passwordBlur(e) {
     var x = password.value;
     if(x.length < 8 || x.search(/[a-z]/) < 0 || x.search(/[0-9]/) < 0 || x.search(/\W/) != -1) {
         passwordVal.style.opacity = '1';
-        errorArray.push('Wrong password format');
+        errorArray.push('Wrong password format' + '\n');
     } else {
-        registerArray.push('Password: ' + x);
+        registerArray.push('Password: ' + x + '\n');
     }
 }
 function passwordFocus(e) {
@@ -68,9 +68,9 @@ function confirmPasswordBlur(e) {
     var x = confirmPassword.value;
     if(!(x == password.value)) {
         confirmPasswordVal.style.opacity = '1';
-        errorArray.push('Wrong confirm password format');
+        errorArray.push('Wrong confirm password format' + '\n');
     } else {
-        registerArray.push('Confirm password: ' + x);
+        registerArray.push('Confirm password: ' + x + '\n');
     }
 }
 function confirmPasswordFocus(e) {
@@ -87,9 +87,9 @@ function ageBlur(e) {
     var x = age.value;
     if(x < 18 || isNaN(x) || x.includes(',') || x.includes('.')) {
         ageVal.style.opacity = '1';
-        errorArray.push('Wrong age format');
+        errorArray.push('Wrong age format' + '\n');
     } else {
-        registerArray.push('Age: ' + x);
+        registerArray.push('Age: ' + x + '\n');
     }
 }
 function ageFocus(e) {
@@ -106,9 +106,9 @@ function phoneNumberBlur(e) {
     var x = phoneNumber.value;
     if(x.length < 7 || isNaN(x) || x.includes(',') || x.includes('.')) {
         phoneNumberVal.style.opacity = '1';
-        errorArray.push('Wrong phone number format');
+        errorArray.push('Wrong phone number format' + '\n');
     } else {
-        registerArray.push('Phone number: ' + x);
+        registerArray.push('Phone number: ' + x + '\n');
     }
 }
 function phoneNumberFocus(e) {
@@ -125,9 +125,9 @@ function addressBlur(e) {
     var x = address.value;
     if(x.length < 5 || x.search(/[a-z]/) < 0 || x.search(/[0-9]/) < 0 || x.indexOf(' ') == -1) {
         addressVal.style.opacity = '1';
-        errorArray.push('Wrong address format');
+        errorArray.push('Wrong address format' + '\n');
     } else {
-        registerArray.push('Address: ' + x);
+        registerArray.push('Address: ' + x + '\n');
     }
 }
 function addressFocus(e) {
@@ -145,9 +145,9 @@ function cityBlur(e) {
     var x = city.value;
     if(x.length < 3) {
         cityVal.style.opacity = '1';
-        errorArray.push('Wrong city format');
+        errorArray.push('Wrong city format' + '\n');
     } else {
-        registerArray.push('City: ' + x);
+        registerArray.push('City: ' + x + '\n');
     }
 }
 function cityFocus(e) {
@@ -165,9 +165,9 @@ function postalCodeBlur(e) {
     var x = postalCode.value;
     if(x.length < 3) {
         postalCodeVal.style.opacity = '1';
-        errorArray.push('Wrong postal code format');
+        errorArray.push('Wrong postal code format' + '\n');
     } else {
-        registerArray.push('Postal code: ' + x);
+        registerArray.push('Postal code: ' + x + '\n');
     }
 }
 function postalCodeFocus(e) {
@@ -184,9 +184,9 @@ function idBlur(e) {
     var x = id.value;
     if(x.length < 7 || x.length > 8 || isNaN(x) || x.includes('.')) {
         idVal.style.opacity = '1';
-        errorArray.push('Wrong id format');
+        errorArray.push('Wrong id format' + '\n');
     } else {
-        registerArray.push('ID: ' + x);
+        registerArray.push('ID: ' + x + '\n');
     }
 }
 function idFocus(e) {
@@ -199,8 +199,8 @@ var button = document.getElementById('button');
 button.addEventListener('click',clickEvent);
 function clickEvent(e) {
     if(errorArray.length == 0) {
-        alert(registerArray);
+        alert(registerArray.join("  "));
     } else {
-        alert(errorArray);
+        alert(errorArray.join("  "));
     }
 }
