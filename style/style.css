@@ -250,7 +250,7 @@ input {
     text-align: center;
 }
 
-#h2-sub-page {
+#h2-sub-page, #h3-sub-page {
     margin: 1em 0;
     text-align: center;
 }
