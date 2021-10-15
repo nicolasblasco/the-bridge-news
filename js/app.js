@@ -23,7 +23,7 @@ email.addEventListener('blur', emailBlur);
 email.addEventListener('focus', emailFocus);
 function emailBlur(e) {
     var x = email.value; 
-    if( x.indexOf('@') == -1 || x.indexOf('.') == -1) {
+    if( x.indexOf('@') == -1 || x.indexOf('.') == -1 || x.includes(' ') == true || x.indexOf('@') == 0 || x.indexOf('.') == email.length - 1) {
         emailVal.style.opacity = '1';
         errorArray.push('Wrong name format');
     } 
