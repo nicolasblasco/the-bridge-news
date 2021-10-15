@@ -183,4 +183,5 @@ function idFocus(e) {
     idVal.style.opacity = '0';
 }
 
-console.log(registerArray);
+// Register & errors
+
