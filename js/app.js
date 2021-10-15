@@ -33,11 +33,35 @@ function emailFocus(e) {
 
 // Password validation
 
-
+var password = document.getElementById('password-input');
+var passwordVal = document.getElementById('password-val');
+password.addEventListener('blur', passwordBlur);
+password.addEventListener('focus', passwordFocus);
+function passwordBlur(e) {
+    var x = password.value;
+    if(x.length < 8 || x.search(/[a-z]/) < 0 || x.search(/[0-9]/) < 0) {
+        passwordVal.style.opacity = '1';
+    } 
+}
+function passwordFocus(e) {
+    passwordVal.style.opacity = '0';
+}
 
 // Confirm password validation
 
-
+var confirmPassword = document.getElementById('confirm-password-input');
+var confirmPasswordVal = document.getElementById('confirm-password-val');
+confirmPassword.addEventListener('blur', confirmPasswordBlur);
+confirmPassword.addEventListener('focus', confirmPasswordFocus);
+function confirmPasswordBlur(e) {
+    var x = confirmPassword.value;
+    if(!(x == password.value)) {
+        confirmPasswordVal.style.opacity = '1';
+    } 
+}
+function confirmPasswordFocus(e) {
+    confirmPasswordVal.style.opacity = '0';
+}
 
 // Age validation
 //FIX: VALIDATION DOESNT WORK WHEN A NUMBER IS 15.5 BUT DOES WHEN IT'S 15,5
