@@ -196,7 +196,7 @@ function idFocus(e) {
 // Register & errors
 
 var button = document.getElementById('button');
-button.addEventListener('click',clickEvent)
+button.addEventListener('click',clickEvent);
 function clickEvent(e) {
     if(errorArray.length == 0) {
         alert(registerArray);
