@@ -1,11 +1,12 @@
 // Full name validation 
+//FIX: at least 6 letters without counting blank spaces
 
 var fullName = document.getElementById('name-input');
 var fullNameVal = document.getElementById('name-val');
 fullName.addEventListener('blur', fullNameBlur);
 fullName.addEventListener('focus', fullNameFocus);
 function fullNameBlur(e) {
-    var x = fullName.value; //FIX: at least 6 letters without counting blank spaces
+    var x = fullName.value; 
     if(x.length < 6 || x.indexOf(' ') == -1) {
         fullNameVal.style.opacity = '1';
     } 
@@ -27,7 +28,21 @@ function fullNameFocus(e) {
 
 
 // Age validation
+//FIX: VALIDATION DOESNT WORK WHEN A NUMBER IS 15.5 BUT DOES WHEN IT'S 15,5
 
+var age = document.getElementById('age-input');
+var ageVal = document.getElementById('age-val');
+age.addEventListener('blur', ageBlur);
+age.addEventListener('focus', ageFocus);
+function ageBlur(e) {
+    var x = age.value;
+    if(x < 18 || isNaN(x) || isInt(x) == 'false') {
+        ageVal.style.opacity = '1';
+    } 
+}
+function ageFocus(e) {
+    ageVal.style.opacity = '0';
+}
 
 
 // Phone number validation
