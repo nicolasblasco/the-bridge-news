@@ -73,7 +73,7 @@ age.addEventListener('blur', ageBlur);
 age.addEventListener('focus', ageFocus);
 function ageBlur(e) {
     var x = age.value;
-    if(x < 18 || isNaN(x) || isInt(x) == 'false') {
+    if(x < 18 || isNaN(x) || x.includes(',') || x.includes('.')) {
         ageVal.style.opacity = '1';
     } 
 }
