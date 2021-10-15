@@ -1,4 +1,4 @@
-// Full email validation 
+// Full name validation 
 //FIX: at least 6 letters without counting blank spaces
 
 var fullName = document.getElementById('name-input');
@@ -7,7 +7,7 @@ fullName.addEventListener('blur', fullNameBlur);
 fullName.addEventListener('focus', fullNameFocus);
 function fullNameBlur(e) {
     var x = fullName.value; 
-    if(x.length < 6 || x.indexOf(' ') == -1) {
+    if(x.length < 7 || x.indexOf(' ') <= 0 || x.indexOf(' ') == x.length -1) {
         fullNameVal.style.opacity = '1';
     } 
 }
@@ -33,7 +33,7 @@ function emailFocus(e) {
 }
 
 // Password validation
-
+// FIX: no usar expresiones regulares [0-9]
 var password = document.getElementById('password-input');
 var passwordVal = document.getElementById('password-val');
 password.addEventListener('blur', passwordBlur);
