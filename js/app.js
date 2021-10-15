@@ -101,7 +101,19 @@ function phoneNumberFocus(e) {
 
 // Address validation
 
-
+var address = document.getElementById('address-input');
+var addressVal = document.getElementById('address-val');
+address.addEventListener('blur', addressBlur);
+address.addEventListener('focus', addressFocus);
+function addressBlur(e) {
+    var x = address.value;
+    if(x.length < 5 || x.search(/[a-z]/) < 0 || x.search(/[0-9]/) < 0 || x.indexOf(' ') == -1) {
+        addressVal.style.opacity = '1';
+    } 
+}
+function addressFocus(e) {
+    addressVal.style.opacity = '0';
+}
 
 //City validation
 //VALIDATION IS WITH NUMBERS ONLY OR CHARACTERS TOO?
