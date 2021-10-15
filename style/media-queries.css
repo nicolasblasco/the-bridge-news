@@ -32,8 +32,11 @@
       font-size: 1em;
     }
 
-    p, label, #button, input, .input-val {
+    p, #button, .input-val {
       font-size: 1em; 
+    }
+    .input-val {
+      font-size: 0.9em;
     }
 
     .nav-links {

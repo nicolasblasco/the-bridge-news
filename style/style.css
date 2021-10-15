@@ -224,7 +224,7 @@ form {
 
 label {
     margin-bottom: 0.5em;
-    font-size: 0.8em;
+    font-size: 1em;
     color: #FFFFFF;
 }
 
@@ -232,7 +232,7 @@ input {
     width: 100%;
     border: 0em;
     border-radius: 0.2em;
-    font-size: 0.8em;
+    font-size: 1em;
     color: #1E2328;
 }
 
@@ -273,6 +273,7 @@ input {
     display: flex;
     flex-direction: column;
     padding: 1em;
+    height: 4.5em;
 }
 
 #button {
