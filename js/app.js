@@ -25,6 +25,7 @@ function emailBlur(e) {
     var x = email.value; 
     if( x.indexOf('@') == -1 || x.indexOf('.') == -1) {
         emailVal.style.opacity = '1';
+        errorArray.push('Wrong name format');
     } 
 }
 function emailFocus(e) {
@@ -39,7 +40,7 @@ password.addEventListener('blur', passwordBlur);
 password.addEventListener('focus', passwordFocus);
 function passwordBlur(e) {
     var x = password.value;
-    if(x.length < 8 || x.search(/[a-z]/) < 0 || x.search(/[0-9]/) < 0) {
+    if(x.length < 8 || x.search(/[a-z]/) < 0 || x.search(/[0-9]/) < 0 || x.search(/\W/) != -1) {
         passwordVal.style.opacity = '1';
     } 
 }
@@ -126,7 +127,9 @@ function cityBlur(e) {
     var x = city.value;
     if(x.length < 3) {
         cityVal.style.opacity = '1';
-    } 
+    } else {
+        registerArray.push('City: ' + x);
+    }
 }
 function cityFocus(e) {
     cityVal.style.opacity = '0';
