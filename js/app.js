@@ -92,7 +92,7 @@ phoneNumber.addEventListener('blur', phoneNumberBlur);
 phoneNumber.addEventListener('focus', phoneNumberFocus);
 function phoneNumberBlur(e) {
     var x = phoneNumber.value;
-    if(x.length < 7 || isNaN(x)) {
+    if(x.length < 7 || isNaN(x) || x.includes(',') || x.includes('.')) {
         phoneNumberVal.style.opacity = '1';
     } 
 }
