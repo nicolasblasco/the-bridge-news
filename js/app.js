@@ -11,6 +11,7 @@ function fullNameBlur(e) {
     var x = fullName.value; 
     if(x.length < 7 || x.indexOf(' ') <= 0 || x.indexOf(' ') == x.length -1) {
         fullNameVal.style.opacity = '1';
+        errorArray.push('Wrong full name format');
     } else {
         registerArray.push('Full name: ' + x);
     }
@@ -29,6 +30,7 @@ function emailBlur(e) {
     var x = email.value; 
     if( x.indexOf('@') == -1 || x.indexOf('.') == -1 || x.includes(' ') == true || x.indexOf('@') == 0 || x.indexOf('.') == email.length - 1) {
         emailVal.style.opacity = '1';
+        errorArray.push('Wrong email format');
     } else {
         registerArray.push('Email: ' + x);
     }
@@ -47,6 +49,7 @@ function passwordBlur(e) {
     var x = password.value;
     if(x.length < 8 || x.search(/[a-z]/) < 0 || x.search(/[0-9]/) < 0 || x.search(/\W/) != -1) {
         passwordVal.style.opacity = '1';
+        errorArray.push('Wrong password format');
     } else {
         registerArray.push('Password: ' + x);
     }
@@ -65,6 +68,7 @@ function confirmPasswordBlur(e) {
     var x = confirmPassword.value;
     if(!(x == password.value)) {
         confirmPasswordVal.style.opacity = '1';
+        errorArray.push('Wrong confirm password format');
     } else {
         registerArray.push('Confirm password: ' + x);
     }
@@ -83,6 +87,7 @@ function ageBlur(e) {
     var x = age.value;
     if(x < 18 || isNaN(x) || x.includes(',') || x.includes('.')) {
         ageVal.style.opacity = '1';
+        errorArray.push('Wrong age format');
     } else {
         registerArray.push('Age: ' + x);
     }
@@ -101,6 +106,7 @@ function phoneNumberBlur(e) {
     var x = phoneNumber.value;
     if(x.length < 7 || isNaN(x) || x.includes(',') || x.includes('.')) {
         phoneNumberVal.style.opacity = '1';
+        errorArray.push('Wrong phone number format');
     } else {
         registerArray.push('Phone number: ' + x);
     }
@@ -119,6 +125,7 @@ function addressBlur(e) {
     var x = address.value;
     if(x.length < 5 || x.search(/[a-z]/) < 0 || x.search(/[0-9]/) < 0 || x.indexOf(' ') == -1) {
         addressVal.style.opacity = '1';
+        errorArray.push('Wrong address format');
     } else {
         registerArray.push('Address: ' + x);
     }
@@ -138,6 +145,7 @@ function cityBlur(e) {
     var x = city.value;
     if(x.length < 3) {
         cityVal.style.opacity = '1';
+        errorArray.push('Wrong city format');
     } else {
         registerArray.push('City: ' + x);
     }
@@ -157,6 +165,7 @@ function postalCodeBlur(e) {
     var x = postalCode.value;
     if(x.length < 3) {
         postalCodeVal.style.opacity = '1';
+        errorArray.push('Wrong postal code format');
     } else {
         registerArray.push('Postal code: ' + x);
     }
@@ -175,6 +184,7 @@ function idBlur(e) {
     var x = id.value;
     if(x.length < 7 || x.length > 8 || isNaN(x) || x.includes('.')) {
         idVal.style.opacity = '1';
+        errorArray.push('Wrong id format');
     } else {
         registerArray.push('ID: ' + x);
     }
@@ -185,3 +195,12 @@ function idFocus(e) {
 
 // Register & errors
 
+var button = document.getElementById('button');
+button.addEventListener('click',clickEvent)
+function clickEvent(e) {
+    if(errorArray.length == 0) {
+        alert(registerArray);
+    } else {
+        alert(errorArray);
+    }
+}
