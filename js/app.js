@@ -59,6 +59,7 @@ function ageFocus(e) {
 
 
 // Phone number validation
+//NEED TO VALIDATE FOR FLOAT NUMBERS
 
 var phoneNumber = document.getElementById('phone-number-input');
 var phoneNumberVal = document.getElementById('phone-number-val');
@@ -79,14 +80,41 @@ function phoneNumberFocus(e) {
 
 
 //City validation
+//VALIDATION IS WITH NUMBERS ONLY OR CHARACTERS TOO?
 
-
+var city = document.getElementById('city-input');
+var cityVal = document.getElementById('city-val');
+city.addEventListener('blur', cityBlur);
+city.addEventListener('focus', cityFocus);
+function cityBlur(e) {
+    var x = city.value;
+    if(x.length < 3) {
+        cityVal.style.opacity = '1';
+    } 
+}
+function cityFocus(e) {
+    cityVal.style.opacity = '0';
+}
 
 // Postal code validation 
+//VALIDATION IS WITH NUMBERS ONLY OR CHARACTERS TOO?
 
-
+var postalCode = document.getElementById('postal-code-input');
+var postalCodeVal = document.getElementById('postal-code-val');
+postalCode.addEventListener('blur', postalCodeBlur);
+postalCode.addEventListener('focus', postalCodeFocus);
+function postalCodeBlur(e) {
+    var x = postalCode.value;
+    if(x.length < 3) {
+        postalCodeVal.style.opacity = '1';
+    } 
+}
+function postalCodeFocus(e) {
+    postalCodeVal.style.opacity = '0';
+}
 
 // ID validation
+//NEED TO VALIDATE FOR FLOAT NUMBERS
 
 var id = document.getElementById('id-input');
 var idVal = document.getElementById('id-val');
