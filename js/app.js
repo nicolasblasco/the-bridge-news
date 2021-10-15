@@ -84,7 +84,6 @@ function ageFocus(e) {
 
 
 // Phone number validation
-//NEED TO VALIDATE FOR FLOAT NUMBERS
 
 var phoneNumber = document.getElementById('phone-number-input');
 var phoneNumberVal = document.getElementById('phone-number-val');
@@ -161,7 +160,7 @@ id.addEventListener('blur', idBlur);
 id.addEventListener('focus', idFocus);
 function idBlur(e) {
     var x = id.value;
-    if(x.length < 7 || x.length > 8 || isNaN(x)) {
+    if(x.length < 7 || x.length > 8 || isNaN(x) || x.includes('.')) {
         idVal.style.opacity = '1';
     } 
 }
