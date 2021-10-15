@@ -1,5 +1,7 @@
+var registerArray = [];
+var errorArray = [];
+
 // Full name validation 
-//FIX: at least 6 letters without counting blank spaces
 
 var fullName = document.getElementById('name-input');
 var fullNameVal = document.getElementById('name-val');
@@ -9,7 +11,9 @@ function fullNameBlur(e) {
     var x = fullName.value; 
     if(x.length < 7 || x.indexOf(' ') <= 0 || x.indexOf(' ') == x.length -1) {
         fullNameVal.style.opacity = '1';
-    } 
+    } else {
+        registerArray.push('Full name: ' + x);
+    }
 }
 function fullNameFocus(e) {
     fullNameVal.style.opacity = '0';
@@ -25,8 +29,9 @@ function emailBlur(e) {
     var x = email.value; 
     if( x.indexOf('@') == -1 || x.indexOf('.') == -1 || x.includes(' ') == true || x.indexOf('@') == 0 || x.indexOf('.') == email.length - 1) {
         emailVal.style.opacity = '1';
-        errorArray.push('Wrong name format');
-    } 
+    } else {
+        registerArray.push('Email: ' + x);
+    }
 }
 function emailFocus(e) {
     emailVal.style.opacity = '0';
@@ -42,7 +47,9 @@ function passwordBlur(e) {
     var x = password.value;
     if(x.length < 8 || x.search(/[a-z]/) < 0 || x.search(/[0-9]/) < 0 || x.search(/\W/) != -1) {
         passwordVal.style.opacity = '1';
-    } 
+    } else {
+        registerArray.push('Password: ' + x);
+    }
 }
 function passwordFocus(e) {
     passwordVal.style.opacity = '0';
@@ -58,14 +65,15 @@ function confirmPasswordBlur(e) {
     var x = confirmPassword.value;
     if(!(x == password.value)) {
         confirmPasswordVal.style.opacity = '1';
-    } 
+    } else {
+        registerArray.push('Confirm password: ' + x);
+    }
 }
 function confirmPasswordFocus(e) {
     confirmPasswordVal.style.opacity = '0';
 }
 
 // Age validation
-//FIX: VALIDATION DOESNT WORK WHEN A NUMBER IS 15.5 BUT DOES WHEN IT'S 15,5
 
 var age = document.getElementById('age-input');
 var ageVal = document.getElementById('age-val');
@@ -75,13 +83,13 @@ function ageBlur(e) {
     var x = age.value;
     if(x < 18 || isNaN(x) || x.includes(',') || x.includes('.')) {
         ageVal.style.opacity = '1';
-    } 
+    } else {
+        registerArray.push('Age: ' + x);
+    }
 }
 function ageFocus(e) {
     ageVal.style.opacity = '0';
 }
-//you can use Number.isInteger 
-
 
 // Phone number validation
 
@@ -93,7 +101,9 @@ function phoneNumberBlur(e) {
     var x = phoneNumber.value;
     if(x.length < 7 || isNaN(x) || x.includes(',') || x.includes('.')) {
         phoneNumberVal.style.opacity = '1';
-    } 
+    } else {
+        registerArray.push('Phone number: ' + x);
+    }
 }
 function phoneNumberFocus(e) {
     phoneNumberVal.style.opacity = '0';
@@ -109,14 +119,16 @@ function addressBlur(e) {
     var x = address.value;
     if(x.length < 5 || x.search(/[a-z]/) < 0 || x.search(/[0-9]/) < 0 || x.indexOf(' ') == -1) {
         addressVal.style.opacity = '1';
-    } 
+    } else {
+        registerArray.push('Address: ' + x);
+    }
 }
 function addressFocus(e) {
     addressVal.style.opacity = '0';
 }
 
 //City validation
-//VALIDATION IS WITH NUMBERS ONLY OR CHARACTERS TOO?
+//Validar caracteres especiales
 
 var city = document.getElementById('city-input');
 var cityVal = document.getElementById('city-val');
@@ -135,7 +147,7 @@ function cityFocus(e) {
 }
 
 // Postal code validation 
-//VALIDATION IS WITH NUMBERS ONLY OR CHARACTERS TOO?
+//Validar caracteres especiales
 
 var postalCode = document.getElementById('postal-code-input');
 var postalCodeVal = document.getElementById('postal-code-val');
@@ -145,14 +157,15 @@ function postalCodeBlur(e) {
     var x = postalCode.value;
     if(x.length < 3) {
         postalCodeVal.style.opacity = '1';
-    } 
+    } else {
+        registerArray.push('Postal code: ' + x);
+    }
 }
 function postalCodeFocus(e) {
     postalCodeVal.style.opacity = '0';
 }
 
 // ID validation
-//NEED TO VALIDATE FOR FLOAT NUMBERS
 
 var id = document.getElementById('id-input');
 var idVal = document.getElementById('id-val');
@@ -162,9 +175,12 @@ function idBlur(e) {
     var x = id.value;
     if(x.length < 7 || x.length > 8 || isNaN(x) || x.includes('.')) {
         idVal.style.opacity = '1';
-    } 
+    } else {
+        registerArray.push('ID: ' + x);
+    }
 }
 function idFocus(e) {
     idVal.style.opacity = '0';
 }
 
+console.log(registerArray);
