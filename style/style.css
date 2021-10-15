@@ -275,7 +275,7 @@ input {
     padding: 1em;
 }
 
-.button {
+#button {
     align-self: center;
     margin-top: 1em;
     padding: 1em;
