@@ -32,11 +32,8 @@
       font-size: 1em;
     }
 
-    p, #button, .input-val {
+    p {
       font-size: 1em; 
-    }
-    .input-val {
-      font-size: 0.9em;
     }
 
     .nav-links {
@@ -51,6 +48,15 @@
       margin: 1em 6em;
       padding: 1em
     }
+
+    label {
+      font-size: 1.1em;
+    }
+
+    .input-val {
+      font-size: 0.95em;
+    }
+
    
   }
 
