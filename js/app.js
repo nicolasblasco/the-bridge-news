@@ -11,9 +11,11 @@ function fullNameBlur(e) {
     var x = fullName.value; 
     if(x.length < 7 || x.indexOf(' ') <= 0 || x.indexOf(' ') == x.length -1) {
         fullNameVal.style.opacity = '1';
+        registerArray[0] = 'error';
         errorArray[0] = 'Error! Please enter a valid full name.' + '\n';
     } else {
         registerArray[0] ='Full name: ' + x + '\n';
+        errorArray[0] = null;
     }
 }
 function fullNameFocus(e) {
@@ -30,9 +32,11 @@ function emailBlur(e) {
     var x = email.value; 
     if( x.indexOf('@') == -1 || x.indexOf('.') == -1 || x.includes(' ') == true || x.indexOf('@') == 0 || x.indexOf('.') == email.length - 1) {
         emailVal.style.opacity = '1';
+        registerArray[1] = 'error';
         errorArray[1] = 'Error! Please enter a valid email.' + '\n';
     } else {
         registerArray[1] ='Email: ' + x + '\n';
+        errorArray[1] = null;
     }
 }
 function emailFocus(e) {
@@ -49,9 +53,11 @@ function passwordBlur(e) {
     var x = password.value;
     if(x.length < 8 || x.search(/[a-z]/) < 0 || x.search(/[0-9]/) < 0 || x.search(/\W/) != -1) {
         passwordVal.style.opacity = '1';
+        registerArray[2] = 'error';
         errorArray[2] = 'Error! Please enter a valid password.' + '\n';
     } else {
         registerArray[2] ='Password: ' + x + '\n';
+        errorArray[2] = null;
     }
 }
 function passwordFocus(e) {
@@ -68,9 +74,11 @@ function confirmPasswordBlur(e) {
     var x = confirmPassword.value;
     if(!(x == password.value)) {
         confirmPasswordVal.style.opacity = '1';
+        registerArray[3] = 'error';
         errorArray[3]= 'Error! Please confirm password.' + '\n';
     } else {
         registerArray[3] = 'Confirm password: ' + x + '\n';
+        errorArray[3] = null;
     }
 }
 function confirmPasswordFocus(e) {
@@ -87,9 +95,11 @@ function ageBlur(e) {
     var x = age.value;
     if(x < 18 || isNaN(x) || x.includes(',') || x.includes('.')) {
         ageVal.style.opacity = '1';
+        registerArray[4] = 'error';
         errorArray[4] = 'Error! Please enter a valid age.' + '\n';
     } else {
         registerArray[4] = 'Age: ' + x + '\n';
+        errorArray[4] = null;
     }
 }
 function ageFocus(e) {
@@ -106,9 +116,11 @@ function phoneNumberBlur(e) {
     var x = phoneNumber.value;
     if(x.length < 7 || isNaN(x) || x.includes(',') || x.includes('.')) {
         phoneNumberVal.style.opacity = '1';
-        errorArray[5] = 'Error! Please enter a valid phone number. + '\n';
+        registerArray[5] = 'error';
+        errorArray[5] = 'Error! Please enter a valid phone number.' + '\n';
     } else {
         registerArray[5] = 'Phone number: ' + x + '\n';
+        errorArray[5] = null;
     }
 }
 function phoneNumberFocus(e) {
@@ -125,17 +137,18 @@ function addressBlur(e) {
     var x = address.value;
     if(x.length < 5 || x.search(/[a-z]/) < 0 || x.search(/[0-9]/) < 0 || x.indexOf(' ') == -1) {
         addressVal.style.opacity = '1';
+        registerArray[6] = 'error';
         errorArray[6] = 'Error! Please enter a valid address.' + '\n';
     } else {
         registerArray[6] = 'Address: ' + x + '\n';
+        errorArray[6] = null;
     }
 }
 function addressFocus(e) {
     addressVal.style.opacity = '0';
 }
 
-//City validation
-//Validar caracteres especiales
+// City validation
 
 var city = document.getElementById('city-input');
 var cityVal = document.getElementById('city-val');
@@ -145,9 +158,11 @@ function cityBlur(e) {
     var x = city.value;
     if(x.length < 3 || x.search(/\W/) != -1) {
         cityVal.style.opacity = '1';
+        registerArray[7] = 'error';
         errorArray[7] = 'Error! Please enter a valid city.' + '\n';
     } else {
         registerArray[7] = 'City: ' + x + '\n';
+        errorArray[7] = null;
     }
 }
 function cityFocus(e) {
@@ -164,9 +179,11 @@ function postalCodeBlur(e) {
     var x = postalCode.value;
     if(x.length < 3 || x.search(/\W/) != -1) {
         postalCodeVal.style.opacity = '1';
+        registerArray[8] = 'error';
         errorArray[8] = 'Wrong postal code format' + '\n';
     } else {
         registerArray[8] = 'Postal code: ' + x + '\n';
+        errorArray[8] = null;
     }
 }
 function postalCodeFocus(e) {
@@ -183,9 +200,11 @@ function idBlur(e) {
     var x = id.value;
     if(x.length < 7 || x.length > 8 || isNaN(x) || x.includes('.')) {
         idVal.style.opacity = '1';
+        registerArray[9] = 'error';
         errorArray[9] = 'Error! Please enter a valid id number.' + '\n';
     } else {
         registerArray[9] = 'ID: ' + x + '\n';
+        errorArray[9] = null;
     }
 }
 function idFocus(e) {
@@ -197,17 +216,17 @@ function idFocus(e) {
 var button = document.getElementById('button');
 button.addEventListener('click',clickEvent);
 function clickEvent(e) {
-    if(errorArray.length == 0) {
-        alert(registerArray.join(' '));
-    } else {
+    if(registerArray.includes("error")) {
         alert(errorArray.join(' '));
+    } else {
+        alert(registerArray.join(' '));
     }
 }
 
 // Autocomplete Name
 
 var autoCompleteName = document.getElementById('name-input');
-autoCompleteName.addEventListener('keypress',autoCompleteEvent);
+autoCompleteName.addEventListener('keydown',autoCompleteEvent);
 autoCompleteName.addEventListener('focus',autoCompleteEvent);
 function autoCompleteEvent(e) {
     var text = e.target.value;
