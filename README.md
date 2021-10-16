@@ -10,7 +10,7 @@ The objetive was to create the cover of a newspaper (main page) using FlexBox as
 
 **Fifth Week:** 
 
-The objetive was to create a subscription form for the newspaper previouly created, maintaining its style with a responsive design and validating all the fields and buttons with the events "blur" and "focus". 
+The objetive was to create a subscription form for the newspaper previously created, maintaining its style with a responsive design and validating all the fields and buttons with the events "blur" and "focus". 
 
 ## Resolution  
 
