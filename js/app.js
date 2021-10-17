@@ -1,6 +1,16 @@
 var registerArray = [];
 var errorArray = [];
 
+var specialChars = "<>@!#$%^&*()_+[]{}?:;|'\"\\,./~`-=";
+var checkForSpecialChar = function(string){
+ for(i = 0; i < specialChars.length;i++){
+   if(string.indexOf(specialChars[i]) > -1){
+       return true
+    }
+ }
+ return false;
+}
+
 // Full name validation 
 
 var fullName = document.getElementById('name-input');
@@ -30,7 +40,7 @@ email.addEventListener('blur', emailBlur);
 email.addEventListener('focus', emailFocus);
 function emailBlur(e) {
     var x = email.value; 
-    if( x.indexOf('@') == -1 || x.indexOf('.') == -1 || x.includes(' ') == true || x.indexOf('@') == 0 || x.indexOf('.') == email.length - 1) {
+    if( x.indexOf('@') <= 0 || x.indexOf('.') == -1 || x.includes(' ') || x.indexOf('.') == email.length - 1) {
         emailVal.style.opacity = '1';
         registerArray[1] = 'error';
         errorArray[1] = 'Error! Please enter a valid email.' + '\n';
@@ -51,7 +61,7 @@ password.addEventListener('blur', passwordBlur);
 password.addEventListener('focus', passwordFocus);
 function passwordBlur(e) {
     var x = password.value;
-    if(x.length < 8 || x.search(/[a-z]/) < 0 || x.search(/[0-9]/) < 0 || x.search(/\W/) != -1) {
+    if(x.length < 8 || x.search(/[a-z]/) < 0 || x.search(/[0-9]/) < 0 || checkForSpecialChar(x)) {
         passwordVal.style.opacity = '1';
         registerArray[2] = 'error';
         errorArray[2] = 'Error! Please enter a valid password.' + '\n';
@@ -156,7 +166,7 @@ city.addEventListener('blur', cityBlur);
 city.addEventListener('focus', cityFocus);
 function cityBlur(e) {
     var x = city.value;
-    if(x.length < 3 || x.search(/\W/) != -1) {
+    if(x.length < 3 || checkForSpecialChar(x)) {
         cityVal.style.opacity = '1';
         registerArray[7] = 'error';
         errorArray[7] = 'Error! Please enter a valid city.' + '\n';
@@ -177,7 +187,7 @@ postalCode.addEventListener('blur', postalCodeBlur);
 postalCode.addEventListener('focus', postalCodeFocus);
 function postalCodeBlur(e) {
     var x = postalCode.value;
-    if(x.length < 3 || x.search(/\W/) != -1) {
+    if(x.length < 3 || checkForSpecialChar(x)) {
         postalCodeVal.style.opacity = '1';
         registerArray[8] = 'error';
         errorArray[8] = 'Wrong postal code format' + '\n';
@@ -216,6 +226,7 @@ function idFocus(e) {
 var button = document.getElementById('button');
 button.addEventListener('click',clickEvent);
 function clickEvent(e) {
+    var text = e.target.value;
     if(registerArray.includes("error")) {
         alert(errorArray.join(' '));
     } else {
