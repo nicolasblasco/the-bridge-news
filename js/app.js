@@ -56,7 +56,7 @@ function fullNameBlur(e) {
         registerArray[0] = 'error';
         errorArray[0] = 'Error! Please enter a valid full name.' + '\n';
     } else {
-        registerArray[0] ='Full name: ' + x + '\n';
+        registerArray[0] ='Full Name: ' + x + '\n';
         errorArray[0] = null;
     }
 }
@@ -119,7 +119,7 @@ function confirmPasswordBlur(e) {
         registerArray[3] = 'error';
         errorArray[3]= 'Error! Please confirm password.' + '\n';
     } else {
-        registerArray[3] = 'Confirm password: ' + x + '\n';
+        registerArray[3] = 'Confirm Password: ' + x + '\n';
         errorArray[3] = null;
     }
 }
@@ -161,7 +161,7 @@ function phoneNumberBlur(e) {
         registerArray[5] = 'error';
         errorArray[5] = 'Error! Please enter a valid phone number.' + '\n';
     } else {
-        registerArray[5] = 'Phone number: ' + x + '\n';
+        registerArray[5] = 'Phone Number: ' + x + '\n';
         errorArray[5] = null;
     }
 }
@@ -224,7 +224,7 @@ function postalCodeBlur(e) {
         registerArray[8] = 'error';
         errorArray[8] = 'Error! Please enter a valid postal code' + '\n';
     } else {
-        registerArray[8] = 'Postal code: ' + x + '\n';
+        registerArray[8] = 'Postal Code: ' + x + '\n';
         errorArray[8] = null;
     }
 }
@@ -245,7 +245,7 @@ function idBlur(e) {
         registerArray[9] = 'error';
         errorArray[9] = 'Error! Please enter a valid id number.' + '\n';
     } else {
-        registerArray[9] = 'ID: ' + x + '\n';
+        registerArray[9] = 'ID Number: ' + x + '\n';
         errorArray[9] = null;
     }
 }
