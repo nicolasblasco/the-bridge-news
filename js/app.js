@@ -222,7 +222,7 @@ function postalCodeBlur(e) {
     if(x.length < 3 || checkForSpecialChar(x)) {
         postalCodeVal.style.opacity = '1';
         registerArray[8] = 'error';
-        errorArray[8] = 'Wrong postal code format' + '\n';
+        errorArray[8] = 'Error! Please enter a valid postal code' + '\n';
     } else {
         registerArray[8] = 'Postal code: ' + x + '\n';
         errorArray[8] = null;
@@ -263,6 +263,8 @@ function clickEvent(e) {
         alert(errorArray.join(' '));
     } else {
         alert(registerArray.join(' '));
+        alert('Check your email to confirm your subscription!');
+        location.reload();
     }
 }
 
