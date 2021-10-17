@@ -1,3 +1,5 @@
+//----- Global variables -----// 
+
 var registerArray = [];
 var errorArray = [];
 
@@ -27,7 +29,7 @@ var checkForNumbers = function(string){
  return false;
 }
 
-// Special characters validation
+// Special character validation
 
 var specialChars = "<>@!#$%^&*()_+[]{}?:;|'\"\\,./~`-=";
 var checkForSpecialChar = function(string){
@@ -251,9 +253,7 @@ function idFocus(e) {
     idVal.style.opacity = '0';
 }
 
-//----- -----//
-
-// Register button  
+//----- Register button -----//
 
 var button = document.getElementById('button');
 button.addEventListener('click',clickEvent);
@@ -266,7 +266,7 @@ function clickEvent(e) {
     }
 }
 
-// Autocomplete Name
+//----- BONUS: Autocomplete name -----//
 
 var autoCompleteName = document.getElementById('name-input');
 autoCompleteName.addEventListener('keydown',autoCompleteEvent);
