@@ -258,7 +258,6 @@ function idFocus(e) {
 var button = document.getElementById('button');
 button.addEventListener('click',clickEvent);
 function clickEvent(e) {
-    var text = e.target.value;
     if(registerArray.includes("error")) {
         alert(errorArray.join(' '));
     } else {
