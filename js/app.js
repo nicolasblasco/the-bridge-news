@@ -3,6 +3,18 @@ var errorArray = [];
 
 //----- Functions for validations -----//
 
+// Letter validation
+
+var letters = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+var checkForletters = function(string){
+ for(i = 0; i < letters.length;i++){
+   if(string.indexOf(letters[i]) > -1){
+       return true
+    }
+ }
+ return false;
+}
+
 // Number validation
 
 var numbers = "0123456789";
@@ -79,7 +91,7 @@ password.addEventListener('blur', passwordBlur);
 password.addEventListener('focus', passwordFocus);
 function passwordBlur(e) {
     var x = password.value;
-    if(x.length < 8 || x.search(/[a-z]/) < 0 || !checkForNumbers(x) || checkForSpecialChar(x)) {
+    if(x.length < 8 || !checkForletters(x) || !checkForNumbers(x) || checkForSpecialChar(x)) {
         passwordVal.style.opacity = '1';
         registerArray[2] = 'error';
         errorArray[2] = 'Error! Please enter a valid password.' + '\n';
@@ -163,7 +175,7 @@ address.addEventListener('blur', addressBlur);
 address.addEventListener('focus', addressFocus);
 function addressBlur(e) {
     var x = address.value;
-    if(x.length < 5 || x.search(/[a-z]/) < 0 || !checkForNumbers(x) || x.indexOf(' ') == -1) {
+    if(x.length < 5 || !checkForletters(x) || !checkForNumbers(x) || x.indexOf(' ') == -1) {
         addressVal.style.opacity = '1';
         registerArray[6] = 'error';
         errorArray[6] = 'Error! Please enter a valid address.' + '\n';
