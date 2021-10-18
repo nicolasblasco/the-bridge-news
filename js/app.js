@@ -264,7 +264,9 @@ function idFocus(e) {
 var button = document.getElementById('button');
 button.addEventListener('click',clickEvent);
 function clickEvent(e) {
-    if(registerArray.includes("error")) {
+    if(registerArray.length <= 9) {
+        alert('Please complete the form!')
+    } else if(registerArray.includes("error")) {
         alert(errorArray.join(' '));
     } else {
         alert(registerArray.join(' '));
