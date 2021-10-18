@@ -1,4 +1,30 @@
-//----- Global variables -----// 
+//----- Inputs ------//
+
+var fullName = document.getElementById('name-input');
+var email = document.getElementById('email-input');
+var password = document.getElementById('password-input');
+var confirmPassword = document.getElementById('confirm-password-input');
+var age = document.getElementById('age-input');
+var ageVal = document.getElementById('age-val');
+var phoneNumber = document.getElementById('phone-number-input');
+var address = document.getElementById('address-input');
+var city = document.getElementById('city-input');
+var postalCode = document.getElementById('postal-code-input');
+var id = document.getElementById('id-input');
+
+//----- Error messages -----//
+
+var fullNameVal = document.getElementById('name-val');
+var emailVal = document.getElementById('email-val');
+var passwordVal = document.getElementById('password-val');
+var confirmPasswordVal = document.getElementById('confirm-password-val');
+var phoneNumberVal = document.getElementById('phone-number-val');
+var addressVal = document.getElementById('address-val');
+var cityVal = document.getElementById('city-val');
+var postalCodeVal = document.getElementById('postal-code-val');
+var idVal = document.getElementById('id-val');
+
+//----- Arrays for register button -----// 
 
 var registerArray = [];
 var errorArray = [];
@@ -8,7 +34,7 @@ var errorArray = [];
 // Letter validation
 
 var letters = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
-var checkForletters = function(string){
+var checkForletters = function(string) {
  for(i = 0; i < letters.length;i++){
    if(string.indexOf(letters[i]) > -1){
        return true
@@ -20,7 +46,7 @@ var checkForletters = function(string){
 // Number validation
 
 var numbers = "0123456789";
-var checkForNumbers = function(string){
+var checkForNumbers = function(string) {
  for(i = 0; i < numbers.length;i++){
    if(string.indexOf(numbers[i]) > -1){
        return true
@@ -32,7 +58,7 @@ var checkForNumbers = function(string){
 // Special character validation
 
 var specialChars = "<>@!#$%^&*()_+[]{}?:;|'\"\\,./~`-=";
-var checkForSpecialChar = function(string){
+var checkForSpecialChar = function(string) {
  for(i = 0; i < specialChars.length;i++){
    if(string.indexOf(specialChars[i]) > -1){
        return true
@@ -41,12 +67,10 @@ var checkForSpecialChar = function(string){
  return false;
 }
 
-//----- Input validations -----//
+//----- Functions for input validations -----//
 
 // Full name validation 
 
-var fullName = document.getElementById('name-input');
-var fullNameVal = document.getElementById('name-val');
 fullName.addEventListener('blur', fullNameBlur);
 fullName.addEventListener('focus', fullNameFocus);
 function fullNameBlur(e) {
@@ -66,8 +90,6 @@ function fullNameFocus(e) {
 
 // Email validation
 
-var email = document.getElementById('email-input');
-var emailVal = document.getElementById('email-val');
 email.addEventListener('blur', emailBlur);
 email.addEventListener('focus', emailFocus);
 function emailBlur(e) {
@@ -87,8 +109,6 @@ function emailFocus(e) {
 
 // Password validation
 
-var password = document.getElementById('password-input');
-var passwordVal = document.getElementById('password-val');
 password.addEventListener('blur', passwordBlur);
 password.addEventListener('focus', passwordFocus);
 function passwordBlur(e) {
@@ -108,8 +128,6 @@ function passwordFocus(e) {
 
 // Confirm password validation
 
-var confirmPassword = document.getElementById('confirm-password-input');
-var confirmPasswordVal = document.getElementById('confirm-password-val');
 confirmPassword.addEventListener('blur', confirmPasswordBlur);
 confirmPassword.addEventListener('focus', confirmPasswordFocus);
 function confirmPasswordBlur(e) {
@@ -129,8 +147,6 @@ function confirmPasswordFocus(e) {
 
 // Age validation
 
-var age = document.getElementById('age-input');
-var ageVal = document.getElementById('age-val');
 age.addEventListener('blur', ageBlur);
 age.addEventListener('focus', ageFocus);
 function ageBlur(e) {
@@ -150,8 +166,6 @@ function ageFocus(e) {
 
 // Phone number validation
 
-var phoneNumber = document.getElementById('phone-number-input');
-var phoneNumberVal = document.getElementById('phone-number-val');
 phoneNumber.addEventListener('blur', phoneNumberBlur);
 phoneNumber.addEventListener('focus', phoneNumberFocus);
 function phoneNumberBlur(e) {
@@ -171,8 +185,6 @@ function phoneNumberFocus(e) {
 
 // Address validation
 
-var address = document.getElementById('address-input');
-var addressVal = document.getElementById('address-val');
 address.addEventListener('blur', addressBlur);
 address.addEventListener('focus', addressFocus);
 function addressBlur(e) {
@@ -192,8 +204,6 @@ function addressFocus(e) {
 
 // City validation
 
-var city = document.getElementById('city-input');
-var cityVal = document.getElementById('city-val');
 city.addEventListener('blur', cityBlur);
 city.addEventListener('focus', cityFocus);
 function cityBlur(e) {
@@ -213,8 +223,6 @@ function cityFocus(e) {
 
 // Postal code validation 
 
-var postalCode = document.getElementById('postal-code-input');
-var postalCodeVal = document.getElementById('postal-code-val');
 postalCode.addEventListener('blur', postalCodeBlur);
 postalCode.addEventListener('focus', postalCodeFocus);
 function postalCodeBlur(e) {
@@ -234,8 +242,6 @@ function postalCodeFocus(e) {
 
 // ID validation
 
-var id = document.getElementById('id-input');
-var idVal = document.getElementById('id-val');
 id.addEventListener('blur', idBlur);
 id.addEventListener('focus', idFocus);
 function idBlur(e) {
