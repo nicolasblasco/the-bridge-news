@@ -278,7 +278,7 @@ function clickEvent(e) {
 //----- BONUS: Autocomplete name -----//
 
 var autoCompleteName = document.getElementById('name-input');
-autoCompleteName.addEventListener('keydown',autoCompleteEvent);
+autoCompleteName.addEventListener('keyup',autoCompleteEvent);
 autoCompleteName.addEventListener('focus',autoCompleteEvent);
 function autoCompleteEvent(e) {
     var text = e.target.value;
