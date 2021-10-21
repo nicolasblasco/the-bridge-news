@@ -12,6 +12,9 @@ var city = document.getElementById('city-input');
 var postalCode = document.getElementById('postal-code-input');
 var id = document.getElementById('id-input');
 
+var modal = document.getElementById('myModal');
+var span = document.getElementsByClassName("close")[0];
+
 //----- Error messages -----//
 
 var fullNameVal = document.getElementById('name-val');
@@ -264,21 +267,39 @@ function idFocus(e) {
 var button = document.getElementById('button');
 button.addEventListener('click',clickEvent);
 function clickEvent(e) {
+    var message = document.getElementById('message');
     if(registerArray.length == 0) {
-        alert('Please complete the form!')
+        modal.style.display = "block";
+        message.innerHTML = 'Please complete the form!';
     } else if(registerArray.includes("error")) {
-        alert(errorArray.join(' '));
+        modal.style.display = "block";
+        message.innerHTML = errorArray.join('<br>');
     } else {
+        modal.style.display = "block";
+        message.innerHTML = registerArray.join('<br>');
+        /*
         alert(registerArray.join(' '));
         alert('Check your email to confirm your subscription!');
         location.reload();
+        */
+    }
+    
+}
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
     }
 }
 
 //----- BONUS: Autocomplete name -----//
 
 var autoCompleteName = document.getElementById('name-input');
-autoCompleteName.addEventListener('keyup',autoCompleteEvent);
+autoCompleteName.addEventListener('keydown',autoCompleteEvent);
 autoCompleteName.addEventListener('focus',autoCompleteEvent);
 function autoCompleteEvent(e) {
     var text = e.target.value;
