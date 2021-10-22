@@ -76,6 +76,9 @@ var checkForSpecialChar = function(string) {
 
 fullName.addEventListener('blur', fullNameBlur);
 fullName.addEventListener('focus', fullNameFocus);
+function fullNameFocus(e) {
+    fullNameVal.style.opacity = '0';
+}
 function fullNameBlur(e) {
     var x = fullName.value; 
     if(x.length < 7 || x.indexOf(' ') <= 0 || x.indexOf(' ') == x.length -1) {
@@ -87,14 +90,14 @@ function fullNameBlur(e) {
         errorArray[0] = null;
     }
 }
-function fullNameFocus(e) {
-    fullNameVal.style.opacity = '0';
-}
 
 // Email validation
 
 email.addEventListener('blur', emailBlur);
 email.addEventListener('focus', emailFocus);
+function emailFocus(e) {
+    emailVal.style.opacity = '0';
+}
 function emailBlur(e) {
     var x = email.value; 
     if( x.indexOf('@') <= 0 || x.indexOf('.') == -1 || x.includes(' ') || x.indexOf('.') == email.length - 1) {
@@ -106,14 +109,14 @@ function emailBlur(e) {
         errorArray[1] = null;
     }
 }
-function emailFocus(e) {
-    emailVal.style.opacity = '0';
-}
 
 // Password validation
 
 password.addEventListener('blur', passwordBlur);
 password.addEventListener('focus', passwordFocus);
+function passwordFocus(e) {
+    passwordVal.style.opacity = '0';
+}
 function passwordBlur(e) {
     var x = password.value;
     if(x.length < 8 || !checkForletters(x) || !checkForNumbers(x) || checkForSpecialChar(x)) {
@@ -125,14 +128,14 @@ function passwordBlur(e) {
         errorArray[2] = null;
     }
 }
-function passwordFocus(e) {
-    passwordVal.style.opacity = '0';
-}
 
 // Confirm password validation
 
 confirmPassword.addEventListener('blur', confirmPasswordBlur);
 confirmPassword.addEventListener('focus', confirmPasswordFocus);
+function confirmPasswordFocus(e) {
+    confirmPasswordVal.style.opacity = '0';
+}
 function confirmPasswordBlur(e) {
     var x = confirmPassword.value;
     if(!(x == password.value)) {
@@ -144,14 +147,15 @@ function confirmPasswordBlur(e) {
         errorArray[3] = null;
     }
 }
-function confirmPasswordFocus(e) {
-    confirmPasswordVal.style.opacity = '0';
-}
+
 
 // Age validation
 
 age.addEventListener('blur', ageBlur);
 age.addEventListener('focus', ageFocus);
+function ageFocus(e) {
+    ageVal.style.opacity = '0';
+}
 function ageBlur(e) {
     var x = age.value;
     if(x < 18 || isNaN(x) || x.includes(',') || x.includes('.')) {
@@ -163,14 +167,15 @@ function ageBlur(e) {
         errorArray[4] = null;
     }
 }
-function ageFocus(e) {
-    ageVal.style.opacity = '0';
-}
+
 
 // Phone number validation
 
 phoneNumber.addEventListener('blur', phoneNumberBlur);
 phoneNumber.addEventListener('focus', phoneNumberFocus);
+function phoneNumberFocus(e) {
+    phoneNumberVal.style.opacity = '0';
+}
 function phoneNumberBlur(e) {
     var x = phoneNumber.value;
     if(x.length < 7 || isNaN(x) || x.includes(',') || x.includes('.')) {
@@ -182,14 +187,15 @@ function phoneNumberBlur(e) {
         errorArray[5] = null;
     }
 }
-function phoneNumberFocus(e) {
-    phoneNumberVal.style.opacity = '0';
-}
+
 
 // Address validation
 
 address.addEventListener('blur', addressBlur);
 address.addEventListener('focus', addressFocus);
+function addressFocus(e) {
+    addressVal.style.opacity = '0';
+}
 function addressBlur(e) {
     var x = address.value;
     if(x.length < 5 || !checkForletters(x) || !checkForNumbers(x) || x.indexOf(' ') == -1) {
@@ -201,14 +207,14 @@ function addressBlur(e) {
         errorArray[6] = null;
     }
 }
-function addressFocus(e) {
-    addressVal.style.opacity = '0';
-}
 
 // City validation
 
 city.addEventListener('blur', cityBlur);
 city.addEventListener('focus', cityFocus);
+function cityFocus(e) {
+    cityVal.style.opacity = '0';
+}
 function cityBlur(e) {
     var x = city.value;
     if(x.length < 3 || checkForSpecialChar(x)) {
@@ -220,14 +226,14 @@ function cityBlur(e) {
         errorArray[7] = null;
     }
 }
-function cityFocus(e) {
-    cityVal.style.opacity = '0';
-}
 
 // Postal code validation 
 
 postalCode.addEventListener('blur', postalCodeBlur);
 postalCode.addEventListener('focus', postalCodeFocus);
+function postalCodeFocus(e) {
+    postalCodeVal.style.opacity = '0';
+}
 function postalCodeBlur(e) {
     var x = postalCode.value;
     if(x.length < 3 || checkForSpecialChar(x)) {
@@ -239,14 +245,14 @@ function postalCodeBlur(e) {
         errorArray[8] = null;
     }
 }
-function postalCodeFocus(e) {
-    postalCodeVal.style.opacity = '0';
-}
 
 // ID validation
 
 id.addEventListener('blur', idBlur);
 id.addEventListener('focus', idFocus);
+function idFocus(e) {
+    idVal.style.opacity = '0';
+}
 function idBlur(e) {
     var x = id.value;
     if(x.length < 7 || x.length > 8 || isNaN(x) || x.includes('.')) {
@@ -258,12 +264,8 @@ function idBlur(e) {
         errorArray[9] = null;
     }
 }
-function idFocus(e) {
-    idVal.style.opacity = '0';
-}
 
 //----- Register button -----//
-
 var button = document.getElementById('button');
 button.addEventListener('click',clickEvent);
 function clickEvent(e) {
@@ -294,7 +296,8 @@ window.onclick = function(event) {
     if (event.target == modal) {
       modal.style.display = "none";
     }
-}
+}         localStorage.setItem('idNumber', registerArray[9]);
+*/ 
 
 //----- BONUS: Autocomplete name -----//
 
