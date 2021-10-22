@@ -267,6 +267,7 @@ function idBlur(e) {
 
 //----- Register button -----//
 var button = document.getElementById('button');
+var url = 'https://curso-dev-2021.herokuapp.com/newsletter?name='+fullName.value+'&email='+email.value+'&password='+password.value+'&confirmPassword='+confirmPassword.value+'&age='+age.value+'&phoneNumber='+phoneNumber.value+'&address='+address.value+'&city='+city.value+'&postalCode='+postalCode.value+'&id='+id.value;
 button.addEventListener('click',clickEvent);
 function clickEvent(e) {
     var message = document.getElementById('message');
@@ -279,11 +280,6 @@ function clickEvent(e) {
     } else {
         modal.style.display = "block";
         message.innerHTML = registerArray.join('<br>');
-        /*
-        alert(registerArray.join(' '));
-        alert('Check your email to confirm your subscription!');
-        location.reload();
-        */
     }
     
 }
@@ -296,8 +292,8 @@ window.onclick = function(event) {
     if (event.target == modal) {
       modal.style.display = "none";
     }
-}         localStorage.setItem('idNumber', registerArray[9]);
-*/ 
+}        
+
 
 //----- BONUS: Autocomplete name -----//
 
