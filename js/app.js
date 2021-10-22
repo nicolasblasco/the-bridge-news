@@ -286,6 +286,16 @@ function clickEvent(e) {
     } else {
         modal.style.display = "block";
         message.innerHTML = registerArray.join('<br>');
+        fetch(url)
+            .then(function(res) {
+                return res.json();
+            })
+            .then(function(data) {
+                console.log(data); 
+            })
+            .catch(function(err) {
+                console.log(err);
+            }) 
     }
     
 }
