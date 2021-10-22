@@ -12,9 +12,6 @@ var city = document.getElementById('city-input');
 var postalCode = document.getElementById('postal-code-input');
 var id = document.getElementById('id-input');
 
-var modal = document.getElementById('myModal');
-var close = document.getElementById('close');
-
 //----- Error messages -----//
 
 var fullNameVal = document.getElementById('name-val');
@@ -265,7 +262,18 @@ function idBlur(e) {
     }
 }
 
+
+//----- Close modal -----//
+
+var modal = document.getElementById('myModal');
+var close = document.getElementById('close');
+close.addEventListener('click',closeModal);
+function closeModal(e) {
+    modal.style.display = "none";
+}
+
 //----- Register button -----//
+
 var button = document.getElementById('button');
 button.addEventListener('click',clickEvent);
 function clickEvent(e) {
@@ -298,13 +306,6 @@ function clickEvent(e) {
             }) 
     }
     
-}
-
-//----- Close modal -----//
-
-close.addEventListener('click',closeModal);
-function closeModal(e) {
-    modal.style.display = "none";
 }
 
 //----- BONUS: Autocomplete name -----//
