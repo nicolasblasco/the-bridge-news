@@ -305,7 +305,17 @@ function clickEvent(e) {
                 return res.json();
             })
             .then(function(data) {
-                console.log(data); 
+                console.log(data);
+                localStorage.setItem('name', registerArray[0]);
+                localStorage.setItem('email', registerArray[1]);
+                localStorage.setItem('password', registerArray[2]);
+                localStorage.setItem('confirmPassword', registerArray[3]);
+                localStorage.setItem('age', registerArray[4]);
+                localStorage.setItem('phoneNumber', registerArray[5]);
+                localStorage.setItem('address', registerArray[6]);
+                localStorage.setItem('city', registerArray[7]);
+                localStorage.setItem('postalCode', registerArray[8]);
+                localStorage.setItem('idNumber', registerArray[9]); 
             })
             .catch(function(err) {
                 console.log(err);
