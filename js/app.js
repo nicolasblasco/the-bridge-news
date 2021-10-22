@@ -13,7 +13,7 @@ var postalCode = document.getElementById('postal-code-input');
 var id = document.getElementById('id-input');
 
 var modal = document.getElementById('myModal');
-var span = document.getElementsByClassName("close")[0];
+var close = document.getElementById('close');
 
 //----- Error messages -----//
 
@@ -284,16 +284,12 @@ function clickEvent(e) {
     
 }
 
-span.onclick = function() {
+//----- Close modal -----//
+
+close.addEventListener('click',closeModal);
+function closeModal(e) {
     modal.style.display = "none";
 }
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-}        
-
 
 //----- BONUS: Autocomplete name -----//
 
