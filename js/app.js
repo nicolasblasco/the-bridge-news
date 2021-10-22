@@ -267,9 +267,9 @@ function idBlur(e) {
 
 //----- Register button -----//
 var button = document.getElementById('button');
-var url = 'https://curso-dev-2021.herokuapp.com/newsletter?name='+fullName.value+'&email='+email.value+'&password='+password.value+'&confirmPassword='+confirmPassword.value+'&age='+age.value+'&phoneNumber='+phoneNumber.value+'&address='+address.value+'&city='+city.value+'&postalCode='+postalCode.value+'&id='+id.value;
 button.addEventListener('click',clickEvent);
 function clickEvent(e) {
+    var url = 'https://curso-dev-2021.herokuapp.com/newsletter?name='+fullName.value+'&email='+email.value+'&password='+password.value+'&confirmPassword='+confirmPassword.value+'&age='+age.value+'&phoneNumber='+phoneNumber.value+'&address='+address.value+'&city='+city.value+'&postalCode='+postalCode.value+'&id='+id.value;
     var message = document.getElementById('message');
     if(registerArray.length == 0) {
         modal.style.display = "block";
