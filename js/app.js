@@ -276,7 +276,13 @@ function clickEvent(e) {
         message.innerHTML = 'Please complete the form!';
     } else if(registerArray.includes("error")) {
         modal.style.display = "block";
-        message.innerHTML = errorArray.join('<br>');
+        var errorMessages = [];
+        for(var i = 0; i < errorArray.length; i++) {
+            if(errorArray[i] !== null) {
+                errorMessages.push(errorArray[i]); 
+            }
+        } 
+        message.innerHTML = errorMessages.join('<br>');
     } else {
         modal.style.display = "block";
         message.innerHTML = registerArray.join('<br>');
