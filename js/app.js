@@ -81,9 +81,9 @@ function fullNameBlur(e) {
     if(x.length < 7 || x.indexOf(' ') <= 0 || x.indexOf(' ') == x.length -1) {
         fullNameVal.style.opacity = '1';
         registerArray[0] = 'error';
-        errorArray[0] = 'Error! Please enter a valid full name.' + '\n';
+        errorArray[0] = 'Error! Please enter a valid full name.';
     } else {
-        registerArray[0] ='Full Name: ' + x + '\n';
+        registerArray[0] ='Full Name: ' + x;
         errorArray[0] = null;
     }
 }
@@ -100,9 +100,9 @@ function emailBlur(e) {
     if( x.indexOf('@') <= 0 || x.indexOf('.') == -1 || x.includes(' ') || x.indexOf('.') == email.length - 1) {
         emailVal.style.opacity = '1';
         registerArray[1] = 'error';
-        errorArray[1] = 'Error! Please enter a valid email.' + '\n';
+        errorArray[1] = 'Error! Please enter a valid email.';
     } else {
-        registerArray[1] ='Email: ' + x + '\n';
+        registerArray[1] ='Email: ' + x;
         errorArray[1] = null;
     }
 }
@@ -119,9 +119,9 @@ function passwordBlur(e) {
     if(x.length < 8 || !checkForletters(x) || !checkForNumbers(x) || checkForSpecialChar(x)) {
         passwordVal.style.opacity = '1';
         registerArray[2] = 'error';
-        errorArray[2] = 'Error! Please enter a valid password.' + '\n';
+        errorArray[2] = 'Error! Please enter a valid password.';
     } else {
-        registerArray[2] ='Password: ' + x + '\n';
+        registerArray[2] ='Password: ' + x;
         errorArray[2] = null;
     }
 }
@@ -138,9 +138,9 @@ function confirmPasswordBlur(e) {
     if(!(x == password.value)) {
         confirmPasswordVal.style.opacity = '1';
         registerArray[3] = 'error';
-        errorArray[3]= 'Error! Please confirm password.' + '\n';
+        errorArray[3]= 'Error! Please confirm password.';
     } else {
-        registerArray[3] = 'Confirm Password: ' + x + '\n';
+        registerArray[3] = 'Confirm Password: ' + x;
         errorArray[3] = null;
     }
 }
@@ -158,9 +158,9 @@ function ageBlur(e) {
     if(x < 18 || isNaN(x) || x.includes(',') || x.includes('.')) {
         ageVal.style.opacity = '1';
         registerArray[4] = 'error';
-        errorArray[4] = 'Error! Please enter a valid age.' + '\n';
+        errorArray[4] = 'Error! Please enter a valid age.';
     } else {
-        registerArray[4] = 'Age: ' + x + '\n';
+        registerArray[4] = 'Age: ' + x;
         errorArray[4] = null;
     }
 }
@@ -178,9 +178,9 @@ function phoneNumberBlur(e) {
     if(x.length < 7 || isNaN(x) || x.includes(',') || x.includes('.')) {
         phoneNumberVal.style.opacity = '1';
         registerArray[5] = 'error';
-        errorArray[5] = 'Error! Please enter a valid phone number.' + '\n';
+        errorArray[5] = 'Error! Please enter a valid phone number.';
     } else {
-        registerArray[5] = 'Phone Number: ' + x + '\n';
+        registerArray[5] = 'Phone Number: ' + x;
         errorArray[5] = null;
     }
 }
@@ -198,9 +198,9 @@ function addressBlur(e) {
     if(x.length < 5 || !checkForletters(x) || !checkForNumbers(x) || x.indexOf(' ') == -1) {
         addressVal.style.opacity = '1';
         registerArray[6] = 'error';
-        errorArray[6] = 'Error! Please enter a valid address.' + '\n';
+        errorArray[6] = 'Error! Please enter a valid address.';
     } else {
-        registerArray[6] = 'Address: ' + x + '\n';
+        registerArray[6] = 'Address: ' + x;
         errorArray[6] = null;
     }
 }
@@ -217,9 +217,9 @@ function cityBlur(e) {
     if(x.length < 3 || checkForSpecialChar(x)) {
         cityVal.style.opacity = '1';
         registerArray[7] = 'error';
-        errorArray[7] = 'Error! Please enter a valid city.' + '\n';
+        errorArray[7] = 'Error! Please enter a valid city.';
     } else {
-        registerArray[7] = 'City: ' + x + '\n';
+        registerArray[7] = 'City: ' + x;
         errorArray[7] = null;
     }
 }
@@ -236,9 +236,9 @@ function postalCodeBlur(e) {
     if(x.length < 3 || checkForSpecialChar(x)) {
         postalCodeVal.style.opacity = '1';
         registerArray[8] = 'error';
-        errorArray[8] = 'Error! Please enter a valid postal code' + '\n';
+        errorArray[8] = 'Error! Please enter a valid postal code';
     } else {
-        registerArray[8] = 'Postal Code: ' + x + '\n';
+        registerArray[8] = 'Postal Code: ' + x;
         errorArray[8] = null;
     }
 }
@@ -255,9 +255,9 @@ function idBlur(e) {
     if(x.length < 7 || x.length > 8 || isNaN(x) || x.includes('.')) {
         idVal.style.opacity = '1';
         registerArray[9] = 'error';
-        errorArray[9] = 'Error! Please enter a valid id number.' + '\n';
+        errorArray[9] = 'Error! Please enter a valid id number.';
     } else {
-        registerArray[9] = 'ID Number: ' + x + '\n';
+        registerArray[9] = 'ID Number: ' + x;
         errorArray[9] = null;
     }
 }
@@ -284,16 +284,22 @@ function clickEvent(e) {
         message.innerHTML = 'Please complete the form!';
     } else if(registerArray.includes("error")) {
         modal.style.display = "block";
-        var errorMessages = [];
+        var errorMessages = '<ul style="list-style: none;">';
         for(var i = 0; i < errorArray.length; i++) {
             if(errorArray[i] !== null) {
-                errorMessages.push(errorArray[i]); 
+                errorMessages += '<li>' + errorArray[i] + '</li>';
             }
-        } 
-        message.innerHTML = errorMessages.join('<br>');
+        }
+        errorMessages += '</ul>';
+        message.innerHTML = errorMessages;
     } else {
         modal.style.display = "block";
-        message.innerHTML = registerArray.join('<br>');
+        var registerMessages = '<ul style="list-style: none;">';
+        for(var i = 0; i < registerArray.length; i++) {
+                registerMessages += '<li>' + registerArray[i] + '</li>';
+        }
+        registerMessages += '</ul>';
+        message.innerHTML = registerMessages;
         fetch(url)
             .then(function(res) {
                 return res.json();
@@ -305,7 +311,6 @@ function clickEvent(e) {
                 console.log(err);
             }) 
     }
-    
 }
 
 //----- BONUS: Autocomplete name -----//
