@@ -31,7 +31,7 @@ window.onload = function() {
     var registerArray = [];
     var errorArray = [];
 
-    //----- Functions for validations -----//
+    //----- Functions for specific validations -----//
 
     // Letter validation
 
@@ -273,7 +273,7 @@ window.onload = function() {
         modal.style.display = "none";
     }
     
-    //----- Register button -----//
+    //----- Register button: input validations & save user data to Local Storage -----//
 
     var dataStorage = function () {
         localStorage.setItem('name', fullName.value);
@@ -332,7 +332,7 @@ window.onload = function() {
         }
     }
 
-    //----- Autocomplete input form with Local Storage values -----//
+    //----- Check Local Storage for user data & autocomplete form  -----//
 
     function checkLocalStorage () {
         fullName.value = !!localStorage.getItem('name') ? localStorage.getItem('name') : null;
