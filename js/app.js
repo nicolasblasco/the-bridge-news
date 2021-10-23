@@ -286,14 +286,14 @@ function clickEvent(e) {
         modal.style.display = "block";
         var errorMessages = '<ul style="list-style: none;">';
         for(var i = 0; i < errorArray.length; i++) {
-            if(errorArray[i] !== null) {
+            if(errorArray[i] !== null && errorArray[i] !== undefined) {
                 errorMessages += '<li>' + errorArray[i] + '</li>';
             }
         }
         errorMessages += '</ul>';
         message.innerHTML = errorMessages;
     } else {
-        modal.style.display = "block";
+        modal.style.display = "block";  
         var registerMessages = '<ul style="list-style: none;">';
         for(var i = 0; i < registerArray.length; i++) {
                 registerMessages += '<li>' + registerArray[i] + '</li>';
@@ -322,6 +322,7 @@ function clickEvent(e) {
             }) 
     }
 }
+
 
 //----- BONUS: Autocomplete name -----//
 
