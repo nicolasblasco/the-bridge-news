@@ -29,13 +29,13 @@ The objective was to extend the online newspaper of week 05 so that when pressin
 
 ## Resolution  
 
-### Third Week: 
+### Week 03: 
 
 You can see the result here: [Newspaper](https://nicolasblasco.github.io/the-bridge-news/)
 
 This project was created with HTML & CSS.
 
-### Fifth & Sixth Week: 
+### Week 05 & 06: 
 
 You can see the result here: [Subscription Page](https://nicolasblasco.github.io/the-bridge-news/sub-page)
 
