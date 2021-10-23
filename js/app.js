@@ -304,7 +304,11 @@ window.onload = function() {
             message.innerHTML = registerMessages;
             fetch(url)
                 .then(function(res) {
-                    return res.json();
+                    if(res.status === 200) {
+                        return res.json();
+                    } else {
+                        throw new Error('Error status: ' + res.status);
+                    }
                 })
                 .then(function(data) {
                     console.log(data);
@@ -324,6 +328,8 @@ window.onload = function() {
                 }) 
         }
     }
+
+    //----- Autocomplete input form with Local Storage values -----//
 
     //----- BONUS: Autocomplete name -----//
 
