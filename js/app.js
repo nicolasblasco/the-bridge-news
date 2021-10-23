@@ -73,12 +73,12 @@ window.onload = function() {
 
     // Full name validation 
 
-    fullName.addEventListener('blur', fullNameBlur);
-    fullName.addEventListener('focus', fullNameFocus);
-    function fullNameFocus(e) {
+    fullName.addEventListener('blur', validateFullName);
+    fullName.addEventListener('focus', clearFullNameError);
+    function clearFullNameError(e) {
         fullNameVal.style.opacity = '0';
     }
-    function fullNameBlur(e) {
+    function validateFullName(e) {
         var x = fullName.value; 
         if(x.length < 7 || x.indexOf(' ') <= 0 || x.indexOf(' ') == x.length -1) {
             fullNameVal.style.opacity = '1';
@@ -92,12 +92,12 @@ window.onload = function() {
 
     // Email validation
 
-    email.addEventListener('blur', emailBlur);
-    email.addEventListener('focus', emailFocus);
-    function emailFocus(e) {
+    email.addEventListener('blur', validateEmail);
+    email.addEventListener('focus', clearEmailError);
+    function clearEmailError(e) {
         emailVal.style.opacity = '0';
     }
-    function emailBlur(e) {
+    function validateEmail(e) {
         var x = email.value; 
         if( x.indexOf('@') <= 0 || x.indexOf('.') == -1 || x.includes(' ') || x.indexOf('.') == email.length - 1) {
             emailVal.style.opacity = '1';
@@ -111,12 +111,12 @@ window.onload = function() {
 
     // Password validation
 
-    password.addEventListener('blur', passwordBlur);
-    password.addEventListener('focus', passwordFocus);
-    function passwordFocus(e) {
+    password.addEventListener('blur', validatePassword);
+    password.addEventListener('focus', clearPasswordError);
+    function clearPasswordError(e) {
         passwordVal.style.opacity = '0';
     }
-    function passwordBlur(e) {
+    function validatePassword(e) {
         var x = password.value;
         if(x.length < 8 || !checkForletters(x) || !checkForNumbers(x) || checkForSpecialChar(x)) {
             passwordVal.style.opacity = '1';
@@ -130,12 +130,12 @@ window.onload = function() {
 
     // Confirm password validation
 
-    confirmPassword.addEventListener('blur', confirmPasswordBlur);
-    confirmPassword.addEventListener('focus', confirmPasswordFocus);
-    function confirmPasswordFocus(e) {
+    confirmPassword.addEventListener('blur', validateConfirmPassword);
+    confirmPassword.addEventListener('focus', clearConfirmPasswordError);
+    function clearConfirmPasswordError(e) {
         confirmPasswordVal.style.opacity = '0';
     }
-    function confirmPasswordBlur(e) {
+    function validateConfirmPassword(e) {
         var x = confirmPassword.value;
         if(!(x == password.value)) {
             confirmPasswordVal.style.opacity = '1';
@@ -150,12 +150,12 @@ window.onload = function() {
 
     // Age validation
 
-    age.addEventListener('blur', ageBlur);
-    age.addEventListener('focus', ageFocus);
-    function ageFocus(e) {
+    age.addEventListener('blur', validateAge);
+    age.addEventListener('focus', clearAgeError);
+    function clearAgeError(e) {
         ageVal.style.opacity = '0';
     }
-    function ageBlur(e) {
+    function validateAge(e) {
         var x = age.value;
         if(x < 18 || isNaN(x) || x.includes(',') || x.includes('.')) {
             ageVal.style.opacity = '1';
@@ -170,12 +170,12 @@ window.onload = function() {
 
     // Phone number validation
 
-    phoneNumber.addEventListener('blur', phoneNumberBlur);
-    phoneNumber.addEventListener('focus', phoneNumberFocus);
-    function phoneNumberFocus(e) {
+    phoneNumber.addEventListener('blur', validatePhoneNumber);
+    phoneNumber.addEventListener('focus', clearPhoneNumberError);
+    function clearPhoneNumberError(e) {
         phoneNumberVal.style.opacity = '0';
     }
-    function phoneNumberBlur(e) {
+    function validatePhoneNumber(e) {
         var x = phoneNumber.value;
         if(x.length < 7 || isNaN(x) || x.includes(',') || x.includes('.')) {
             phoneNumberVal.style.opacity = '1';
@@ -190,12 +190,12 @@ window.onload = function() {
 
     // Address validation
 
-    address.addEventListener('blur', addressBlur);
-    address.addEventListener('focus', addressFocus);
-    function addressFocus(e) {
+    address.addEventListener('blur', validateAddress);
+    address.addEventListener('focus', clearAddressError);
+    function clearAddressError(e) {
         addressVal.style.opacity = '0';
     }
-    function addressBlur(e) {
+    function validateAddress(e) {
         var x = address.value;
         if(x.length < 5 || !checkForletters(x) || !checkForNumbers(x) || x.indexOf(' ') == -1) {
             addressVal.style.opacity = '1';
@@ -209,12 +209,12 @@ window.onload = function() {
 
     // City validation
 
-    city.addEventListener('blur', cityBlur);
-    city.addEventListener('focus', cityFocus);
-    function cityFocus(e) {
+    city.addEventListener('blur', validateCity);
+    city.addEventListener('focus', clearCityError);
+    function clearCityError(e) {
         cityVal.style.opacity = '0';
     }
-    function cityBlur(e) {
+    function validateCity(e) {
         var x = city.value;
         if(x.length < 3 || checkForSpecialChar(x)) {
             cityVal.style.opacity = '1';
@@ -228,12 +228,12 @@ window.onload = function() {
 
     // Postal code validation 
 
-    postalCode.addEventListener('blur', postalCodeBlur);
-    postalCode.addEventListener('focus', postalCodeFocus);
-    function postalCodeFocus(e) {
+    postalCode.addEventListener('blur', validatePostalCode);
+    postalCode.addEventListener('focus', clearPostalCodeError);
+    function clearPostalCodeError(e) {
         postalCodeVal.style.opacity = '0';
     }
-    function postalCodeBlur(e) {
+    function validatePostalCode(e) {
         var x = postalCode.value;
         if(x.length < 3 || checkForSpecialChar(x)) {
             postalCodeVal.style.opacity = '1';
@@ -247,12 +247,12 @@ window.onload = function() {
 
     // ID validation
 
-    id.addEventListener('blur', idBlur);
-    id.addEventListener('focus', idFocus);
-    function idFocus(e) {
+    id.addEventListener('blur', validateIdNumber);
+    id.addEventListener('focus', clearIdNumberError);
+    function clearIdNumberError(e) {
         idVal.style.opacity = '0';
     }
-    function idBlur(e) {
+    function validateIdNumber(e) {
         var x = id.value;
         if(x.length < 7 || x.length > 8 || isNaN(x) || x.includes('.')) {
             idVal.style.opacity = '1';
