@@ -147,7 +147,6 @@ window.onload = function() {
         }
     }
 
-
     // Age validation
 
     age.addEventListener('blur', validateAge);
@@ -167,7 +166,6 @@ window.onload = function() {
         }
     }
 
-
     // Phone number validation
 
     phoneNumber.addEventListener('blur', validatePhoneNumber);
@@ -186,7 +184,6 @@ window.onload = function() {
             errorArray[5] = null;
         }
     }
-
 
     // Address validation
 
@@ -287,7 +284,6 @@ window.onload = function() {
         localStorage.setItem('postal code', postalCode.value);
         localStorage.setItem('id number', idNumber.value);
     }
-
     var button = document.getElementById('button');
     button.addEventListener('click',clickEvent);
     function clickEvent(e) {
@@ -346,7 +342,6 @@ window.onload = function() {
         postalCode.value = !!localStorage.getItem('postal code') ? localStorage.getItem('postal code') : null;
         idNumber.value = !!localStorage.getItem('id number') ? localStorage.getItem('id number') : null;
     };
-    
     window.onload = checkLocalStorage();
 
     //----- BONUS: Autocomplete name -----//
