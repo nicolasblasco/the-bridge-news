@@ -12,7 +12,7 @@ window.onload = function() {
     var address = document.getElementById('address-input');
     var city = document.getElementById('city-input');
     var postalCode = document.getElementById('postal-code-input');
-    var id = document.getElementById('id-input');
+    var idNumber = document.getElementById('id-input');
 
     //----- Error messages -----//
 
@@ -24,7 +24,7 @@ window.onload = function() {
     var addressVal = document.getElementById('address-val');
     var cityVal = document.getElementById('city-val');
     var postalCodeVal = document.getElementById('postal-code-val');
-    var idVal = document.getElementById('id-val');
+    var idNumberVal = document.getElementById('id-val');
 
     //----- Arrays for register button -----// 
 
@@ -247,15 +247,15 @@ window.onload = function() {
 
     // ID validation
 
-    id.addEventListener('blur', validateIdNumber);
-    id.addEventListener('focus', clearIdNumberError);
+    idNumber.addEventListener('blur', validateIdNumber);
+    idNumber.addEventListener('focus', clearIdNumberError);
     function clearIdNumberError(e) {
-        idVal.style.opacity = '0';
+        idNumberVal.style.opacity = '0';
     }
     function validateIdNumber(e) {
-        var x = id.value;
+        var x = idNumber.value;
         if(x.length < 7 || x.length > 8 || isNaN(x) || x.includes('.')) {
-            idVal.style.opacity = '1';
+            idNumberVal.style.opacity = '1';
             registerArray[9] = 'error';
             errorArray[9] = 'Error! Please enter a valid id number.';
         } else {
@@ -263,7 +263,6 @@ window.onload = function() {
             errorArray[9] = null;
         }
     }
-
 
     //----- Close modal -----//
 
@@ -276,10 +275,23 @@ window.onload = function() {
     
     //----- Register button -----//
 
+    var dataStorage = function () {
+        localStorage.setItem('name', fullName.value);
+        localStorage.setItem('email', email.value);
+        localStorage.setItem('password', password.value);
+        localStorage.setItem('confirm password', confirmPassword.value);
+        localStorage.setItem('age', age.value);
+        localStorage.setItem('phone number', phoneNumber.value);
+        localStorage.setItem('address', address.value);
+        localStorage.setItem('city', city.value);
+        localStorage.setItem('postal code', postalCode.value);
+        localStorage.setItem('id number', idNumber.value);
+    }
+
     var button = document.getElementById('button');
     button.addEventListener('click',clickEvent);
     function clickEvent(e) {
-        var url = 'https://curso-dev-2021.herokuapp.com/newsletter?name='+fullName.value+'&email='+email.value+'&password='+password.value+'&confirmPassword='+confirmPassword.value+'&age='+age.value+'&phoneNumber='+phoneNumber.value+'&address='+address.value+'&city='+city.value+'&postalCode='+postalCode.value+'&id='+id.value;
+        var url = 'https://curso-dev-2021.herokuapp.com/newsletter?name='+fullName.value+'&email='+email.value+'&password='+password.value+'&confirmPassword='+confirmPassword.value+'&age='+age.value+'&phoneNumber='+phoneNumber.value+'&address='+address.value+'&city='+city.value+'&postalCode='+postalCode.value+'&id='+idNumber.value;
         var message = document.getElementById('message');
         if(registerArray.length == 0) {
             modal.style.display = "block";
@@ -311,16 +323,7 @@ window.onload = function() {
                     }
                     registerMessages += '</ul>';
                     message.innerHTML = registerMessages;
-                    localStorage.setItem('name', fullName.value);
-                    localStorage.setItem('email', email.value);
-                    localStorage.setItem('password', password.value);
-                    localStorage.setItem('confirm password', confirmPassword.value);
-                    localStorage.setItem('age', age.value);
-                    localStorage.setItem('phone number', phoneNumber.value);
-                    localStorage.setItem('address', address.value);
-                    localStorage.setItem('city', city.value);
-                    localStorage.setItem('postal code', postalCode.value);
-                    localStorage.setItem('id number', id.value); 
+                    dataStorage();
                 })
                 .catch(function(err) {
                     modal.style.display = "block";
@@ -341,7 +344,7 @@ window.onload = function() {
         address.value = !!localStorage.getItem('address') ? localStorage.getItem('address') : null;
         city.value = !!localStorage.getItem('city') ? localStorage.getItem('city') : null;
         postalCode.value = !!localStorage.getItem('postal code') ? localStorage.getItem('postal code') : null;
-        id.value = !!localStorage.getItem('id number') ? localStorage.getItem('id number') : null;
+        idNumber.value = !!localStorage.getItem('id number') ? localStorage.getItem('id number') : null;
     };
     
     window.onload = checkLocalStorage();
