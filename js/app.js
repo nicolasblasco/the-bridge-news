@@ -26,7 +26,7 @@ window.onload = function() {
     var postalCodeVal = document.getElementById('postal-code-val');
     var idNumberVal = document.getElementById('id-val');
 
-    //----- Arrays for register button -----// 
+    //----- Arrays for form input values & errors -----// 
 
     var registerArray = [];
     var errorArray = [];
