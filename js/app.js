@@ -279,7 +279,7 @@ window.onload = function() {
     var button = document.getElementById('button');
     button.addEventListener('click',clickEvent);
     function clickEvent(e) {
-        var url = 'https://curso-dev-2021.herokuapp.com/newsletter?name='+fullName.value+'&email='+email.value+'&password='+password.value+'&confirmPassword='+confirmPassword.value+'&age='+age.value+'&phoneNumber='+phoneNumber.value+'&address='+address.value+'&city='+city.value+'&postalCode='+postalCode.value+'&id='+id.value;
+        var url = 'https://curso-dev-2021.herokuapp.com/newsletter?'+fullName.value+'&email='+email.value+'&password='+password.value+'&confirmPassword='+confirmPassword.value+'&age='+age.value+'&phoneNumber='+phoneNumber.value+'&address='+address.value+'&city='+city.value+'&postalCode='+postalCode.value+'&id='+id.value;
         var message = document.getElementById('message');
         if(registerArray.length == 0) {
             modal.style.display = "block";
@@ -295,22 +295,22 @@ window.onload = function() {
             errorMessages += '</ul>';
             message.innerHTML = errorMessages;
         } else {
-            modal.style.display = "block";  
-            var registerMessages = '<ul class ="list-modal">';
-            for(var i = 0; i < registerArray.length; i++) {
-                    registerMessages += '<li>' + registerArray[i] + '</li>';
-            }
-            registerMessages += '</ul>';
-            message.innerHTML = registerMessages;
             fetch(url)
                 .then(function(res) {
                     if(res.status === 200) {
                         return res.json();
                     } else {
-                        throw new Error('Error status: ' + res.status);
+                        throw new Error(res.status);
                     }
                 })
                 .then(function(data) {
+                    modal.style.display = "block";  
+                    var registerMessages = '<ul class ="list-modal">';
+                    for(var i = 0; i < registerArray.length; i++) {
+                            registerMessages += '<li>' + registerArray[i] + '</li>';
+                    }
+                    registerMessages += '</ul>';
+                    message.innerHTML = registerMessages;
                     console.log(data);
                     localStorage.setItem('name', registerArray[0]);
                     localStorage.setItem('email', registerArray[1]);
@@ -324,7 +324,8 @@ window.onload = function() {
                     localStorage.setItem('idNumber', registerArray[9]); 
                 })
                 .catch(function(err) {
-                    console.log(err);
+                    modal.style.display = "block";
+                    message.innerHTML = err;
                 }) 
         }
     }
@@ -338,7 +339,6 @@ window.onload = function() {
     autoCompleteName.addEventListener('focus',autoCompleteEvent);
     function autoCompleteEvent(e) {
         var text = e.target.value;
-        console.log(text);
         var titleName = document.getElementById('h3-sub-page');
         titleName.innerHTML = 'Hello ' + text + ' !';
     }
