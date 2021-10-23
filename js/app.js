@@ -284,7 +284,7 @@ function clickEvent(e) {
         message.innerHTML = 'Please complete the form!';
     } else if(registerArray.includes("error")) {
         modal.style.display = "block";
-        var errorMessages = '<ul style="list-style: none;">';
+        var errorMessages = '<ul class ="list-modal">';
         for(var i = 0; i < errorArray.length; i++) {
             if(errorArray[i] !== null && errorArray[i] !== undefined) {
                 errorMessages += '<li>' + errorArray[i] + '</li>';
@@ -294,7 +294,7 @@ function clickEvent(e) {
         message.innerHTML = errorMessages;
     } else {
         modal.style.display = "block";  
-        var registerMessages = '<ul style="list-style: none;">';
+        var registerMessages = '<ul class ="list-modal">';
         for(var i = 0; i < registerArray.length; i++) {
                 registerMessages += '<li>' + registerArray[i] + '</li>';
         }

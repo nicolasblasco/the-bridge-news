@@ -327,4 +327,6 @@ input {
     align-self: flex-start;
 }
   
-
+.list-modal {
+    list-style: none;
+}
