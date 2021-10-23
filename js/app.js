@@ -273,7 +273,7 @@ window.onload = function() {
     function closeModal(e) {
         modal.style.display = "none";
     }
-
+    
     //----- Register button -----//
 
     var button = document.getElementById('button');
@@ -311,13 +311,12 @@ window.onload = function() {
                     }
                     registerMessages += '</ul>';
                     message.innerHTML = registerMessages;
-                    console.log(data);
                     localStorage.setItem('name', fullName.value);
                     localStorage.setItem('email', email.value);
                     localStorage.setItem('password', password.value);
                     localStorage.setItem('confirm password', confirmPassword.value);
                     localStorage.setItem('age', age.value);
-                    localStorage.setItem('phoneNumber', phoneNumber.value);
+                    localStorage.setItem('phone number', phoneNumber.value);
                     localStorage.setItem('address', address.value);
                     localStorage.setItem('city', city.value);
                     localStorage.setItem('postal code', postalCode.value);
@@ -332,7 +331,20 @@ window.onload = function() {
 
     //----- Autocomplete input form with Local Storage values -----//
 
+    function checkLocalStorage () {
+        fullName.value = !!localStorage.getItem('name') ? localStorage.getItem('name') : null;
+        email.value = !!localStorage.getItem('email') ? localStorage.getItem('email') : null;
+        password.value = !!localStorage.getItem('password') ? localStorage.getItem('password') : null;
+        confirmPassword.value = !!localStorage.getItem('confirm password') ? localStorage.getItem('confirm password') : null;
+        age.value = !!localStorage.getItem('age') ? localStorage.getItem('age') : null;
+        phoneNumber.value = !!localStorage.getItem('phone number') ? localStorage.getItem('phone number') : null;
+        address.value = !!localStorage.getItem('address') ? localStorage.getItem('address') : null;
+        city.value = !!localStorage.getItem('city') ? localStorage.getItem('city') : null;
+        postalCode.value = !!localStorage.getItem('postal code') ? localStorage.getItem('postal code') : null;
+        id.value = !!localStorage.getItem('id number') ? localStorage.getItem('id number') : null;
+    };
     
+    window.onload = checkLocalStorage();
 
     //----- BONUS: Autocomplete name -----//
 
