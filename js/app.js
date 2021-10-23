@@ -312,16 +312,16 @@ window.onload = function() {
                     registerMessages += '</ul>';
                     message.innerHTML = registerMessages;
                     console.log(data);
-                    localStorage.setItem('name', registerArray[0]);
-                    localStorage.setItem('email', registerArray[1]);
-                    localStorage.setItem('password', registerArray[2]);
-                    localStorage.setItem('confirmPassword', registerArray[3]);
-                    localStorage.setItem('age', registerArray[4]);
-                    localStorage.setItem('phoneNumber', registerArray[5]);
-                    localStorage.setItem('address', registerArray[6]);
-                    localStorage.setItem('city', registerArray[7]);
-                    localStorage.setItem('postalCode', registerArray[8]);
-                    localStorage.setItem('idNumber', registerArray[9]); 
+                    localStorage.setItem('name', fullName.value);
+                    localStorage.setItem('email', email.value);
+                    localStorage.setItem('password', password.value);
+                    localStorage.setItem('confirm password', confirmPassword.value);
+                    localStorage.setItem('age', age.value);
+                    localStorage.setItem('phoneNumber', phoneNumber.value);
+                    localStorage.setItem('address', address.value);
+                    localStorage.setItem('city', city.value);
+                    localStorage.setItem('postal code', postalCode.value);
+                    localStorage.setItem('id number', id.value); 
                 })
                 .catch(function(err) {
                     modal.style.display = "block";
@@ -331,6 +331,8 @@ window.onload = function() {
     }
 
     //----- Autocomplete input form with Local Storage values -----//
+
+    
 
     //----- BONUS: Autocomplete name -----//
 
