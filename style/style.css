@@ -289,7 +289,9 @@ input {
 }
 
 /*---- Modal ----*/
+
 .modal {
+    font-size: 0.95em;
     display: none; 
     position: fixed; 
     z-index: 1; 
@@ -307,7 +309,7 @@ input {
     justify-content: space-between;
     background-color: #1E2328;
     margin: 15% auto; 
-    padding: 1.5em;
+    padding: 1em;
     border: 0.1em solid #888;
     width: 80%; 
     color: #FFFFFF;

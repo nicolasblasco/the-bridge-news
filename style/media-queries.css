@@ -49,7 +49,7 @@
       padding: 1em
     }
 
-    label {
+    label, .modal {
       font-size: 1.1em;
     }
 
