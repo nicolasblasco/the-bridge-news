@@ -309,7 +309,7 @@ window.onload = function() {
                     if(res.status === 200) {
                         return res.json();
                     } else {
-                        throw new Error(res.status);
+                        throw res.status;
                     }
                 })
                 .then(function(data) {
@@ -325,7 +325,7 @@ window.onload = function() {
                 })
                 .catch(function(err) {
                     modal.style.display = "block";
-                    message.innerHTML = err;
+                    message.innerHTML = 'Error status: ' + err;
                 }) 
         }
     }
