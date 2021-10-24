@@ -289,6 +289,7 @@ window.onload = function() {
     function clickEvent(e) {
         var url = 'https://curso-dev-2021.herokuapp.com/newsletter?name='+fullName.value+'&email='+email.value+'&password='+password.value+'&confirmPassword='+confirmPassword.value+'&age='+age.value+'&phoneNumber='+phoneNumber.value+'&address='+address.value+'&city='+city.value+'&postalCode='+postalCode.value+'&id='+idNumber.value;
         var message = document.getElementById('message');
+        var titleMessage = document.getElementById('title-message');
         if(registerArray.length == 0) {
             modal.style.display = "block";
             message.innerHTML = 'Please complete the form!';
@@ -313,6 +314,7 @@ window.onload = function() {
                 })
                 .then(function(data) {
                     modal.style.display = "block";  
+                    titleMessage.innerHTML = 'Thank you! Your subscription was succesfully completed. Here is your information:'
                     var registerMessages = '<ul class ="list-modal">';
                     for(var i = 0; i < registerArray.length; i++) {
                             registerMessages += '<li>' + registerArray[i] + '</li>';
