@@ -22,7 +22,9 @@ The objective was to extend the online newspaper of week 05 so that when pressin
 * An HTML sub-page file with the structure of the subscription page of the online newspaper.
 * A style folder with 3 files:
   * 'normalize.css' that normalizes all the default styles of the page. 
-  * 'style.css' that contains all the styles of the layout for the index.html & sub-page.html.
+  * 'style.css' that contains all the styles of the layout for the index.html.
+  * 'sub-page.css' that contains all the styles of the layout for sub-page html.
+  * 'modal.css' that contains all the styles of the modal. 
   * 'media-queries.css' that has all the media queries for the desktop version of both pages.
 * An 'images' folder that contains all of the images used in index.html.
 * A js folder that contains the 'app.js' file with all of the validation functions for the form's inputs.
