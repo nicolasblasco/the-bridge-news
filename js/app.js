@@ -290,7 +290,10 @@ window.onload = function() {
         var url = 'https://curso-dev-2021.herokuapp.com/newsletter?name='+fullName.value+'&email='+email.value+'&password='+password.value+'&confirmPassword='+confirmPassword.value+'&age='+age.value+'&phoneNumber='+phoneNumber.value+'&address='+address.value+'&city='+city.value+'&postalCode='+postalCode.value+'&id='+idNumber.value;
         var message = document.getElementById('message');
         var titleMessage = document.getElementById('title-message');
-        if(registerArray.length == 0) {
+        if(checkLocalStorage()) {
+            modal.style.display = 'block';
+            message.innerHTML = 'Form already complete!';
+        } else if(registerArray.length == 0) {
             modal.style.display = 'block';
             message.innerHTML = 'Please complete the form!';
         } else if(registerArray.includes("error")) {
@@ -350,23 +353,23 @@ window.onload = function() {
         city.value = !!localStorage.getItem('city') ? localStorage.getItem('city') : null;
         postalCode.value = !!localStorage.getItem('postal code') ? localStorage.getItem('postal code') : null;
         idNumber.value = !!localStorage.getItem('id number') ? localStorage.getItem('id number') : null;
+        /*
         var text = localStorage.getItem('name');
         var titleName = document.getElementById('h3-sub-page');
         titleName.innerHTML = 'Hello ' + text + ' !'
+        */
     };
     window.onload = checkLocalStorage();
 
     //----- BONUS: Autocomplete name -----//
-
-    var autoCompleteName = document.getElementById('name-input');
-    autoCompleteName.addEventListener('keyup',autoCompleteEvent);
-    autoCompleteName.addEventListener('focus',autoCompleteEvent);
-    function autoCompleteEvent(e) {
+    
+    fullName.addEventListener('keyup',autoCompleteName);
+    fullName.addEventListener('focus',autoCompleteName);
+    function autoCompleteName(e) {
         var text = e.target.value;
         var titleName = document.getElementById('h3-sub-page');
         titleName.innerHTML = 'Hello ' + text + ' !';
     }
-
 }
 
 
