@@ -297,7 +297,7 @@ window.onload = function() {
             modal.style.display = "block";
             var errorMessages = '<ul class ="list-modal">';
             for(var i = 0; i < errorArray.length; i++) {
-                if(errorArray[i] !== null && errorArray[i] !== undefined) {
+                if(errorArray[i] !== null && errorArray[i] !== '' && errorArray[i] !== undefined) {
                     errorMessages += '<li>' + errorArray[i] + '</li>';
                 }
             }
@@ -313,15 +313,22 @@ window.onload = function() {
                     }
                 })
                 .then(function(data) {
-                    modal.style.display = "block";  
-                    titleMessage.innerHTML = 'Thank you! Your subscription was succesfully completed. Here is your information:'
-                    var registerMessages = '<ul class ="list-modal">';
-                    for(var i = 0; i < registerArray.length; i++) {
+                    if(fullName.value !== '' && email.value !== '' && password.value !== '' && confirmPassword.value !== '' 
+                    && age.value !== '' && phoneNumber.value !== '' && address.value !== '' && city.value !== '' 
+                    && postalCode.value !== '' && idNumber.value !== '') {
+                        modal.style.display = "block";  
+                        titleMessage.innerHTML = 'Thank you! Your subscription was succesfully completed. Here is your information:'
+                        var registerMessages = '<ul class ="list-modal">';
+                        for(var i = 0; i < registerArray.length; i++) {
                             registerMessages += '<li>' + registerArray[i] + '</li>';
-                    }
-                    registerMessages += '</ul>';
-                    message.innerHTML = registerMessages;
-                    dataStorage();
+                        }
+                        registerMessages += '</ul>';
+                        message.innerHTML = registerMessages;
+                        dataStorage();
+                    } else {
+                        modal.style.display = "block";
+                        message.innerHTML = 'Please complete the form!';
+                    }  
                 })
                 .catch(function(err) {
                     modal.style.display = "block";
