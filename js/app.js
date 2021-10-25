@@ -285,15 +285,12 @@ window.onload = function() {
         localStorage.setItem('id number', idNumber.value);
     }
     var button = document.getElementById('button');
-    button.addEventListener('click',clickEvent);
-    function clickEvent(e) {
+    button.addEventListener('click',registerButton);
+    function registerButton(e) {
         var url = 'https://curso-dev-2021.herokuapp.com/newsletter?name='+fullName.value+'&email='+email.value+'&password='+password.value+'&confirmPassword='+confirmPassword.value+'&age='+age.value+'&phoneNumber='+phoneNumber.value+'&address='+address.value+'&city='+city.value+'&postalCode='+postalCode.value+'&id='+idNumber.value;
         var message = document.getElementById('message');
         var titleMessage = document.getElementById('title-message');
-        if(checkLocalStorage()) {
-            modal.style.display = 'block';
-            message.innerHTML = 'Form already complete!';
-        } else if(registerArray.length == 0) {
+        if(registerArray.length == 0) {
             modal.style.display = 'block';
             message.innerHTML = 'Please complete the form!';
         } else if(registerArray.includes("error")) {
@@ -353,16 +350,24 @@ window.onload = function() {
         city.value = !!localStorage.getItem('city') ? localStorage.getItem('city') : null;
         postalCode.value = !!localStorage.getItem('postal code') ? localStorage.getItem('postal code') : null;
         idNumber.value = !!localStorage.getItem('id number') ? localStorage.getItem('id number') : null;
+        var text = localStorage.getItem('name');
+        var titleName = document.getElementById('h3-sub-page');
+        if(text != null) {
+            titleName.innerHTML = 'Hello ' + text + ' !';
+        }
+
     };
     window.onload = checkLocalStorage();
 
     //----- BONUS: Autocomplete name -----//
 
-    fullName.addEventListener('keyup',autoCompleteName);
-    fullName.addEventListener('focus',autoCompleteName);
+    var fullNameForm = document.getElementById('name-input');
+    fullNameForm.addEventListener('keyup',autoCompleteName);
+    fullNameForm.addEventListener('focus',autoCompleteName);
     function autoCompleteName(e) {
+        var text = e.target.value;
         var titleName = document.getElementById('h3-sub-page');
-        titleName.innerHTML = 'Hello ' + fullName.value + ' !';
+        titleName.innerHTML = 'Hello ' + text + ' !';
     }
 }
 
