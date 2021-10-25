@@ -30,18 +30,6 @@ input {
     opacity: 0;
 }
 
-#h2-sub-page-link {
-    margin: 0;
-    padding: 0.5em 0;
-    background-color:#C72C41;
-    text-align: center;
-}
-
-#h2-sub-page, #h3-sub-page {
-    margin: 1em 0;
-    text-align: center;
-}
-
 #form-container {
     display: flex;
     flex-wrap: wrap;
