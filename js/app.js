@@ -76,12 +76,12 @@ window.onload = function() {
     fullName.addEventListener('blur', validateFullName);
     fullName.addEventListener('focus', clearFullNameError);
     function clearFullNameError(e) {
-        fullNameVal.style.opacity = '0';
+        fullNameVal.classList.add('error-hidden');
     }
     function validateFullName(e) {
         var x = fullName.value; 
         if(x.length < 7 || x.indexOf(' ') <= 0 || x.indexOf(' ') == x.length -1) {
-            fullNameVal.style.opacity = '1';
+            fullNameVal.classList.remove('error-hidden');
             registerArray[0] = 'error';
             errorArray[0] = 'Error! Please enter a valid full name.';
         } else {
@@ -95,12 +95,12 @@ window.onload = function() {
     email.addEventListener('blur', validateEmail);
     email.addEventListener('focus', clearEmailError);
     function clearEmailError(e) {
-        emailVal.style.opacity = '0';
+        emailVal.classList.add('error-hidden');
     }
     function validateEmail(e) {
         var x = email.value; 
         if( x.indexOf('@') <= 0 || x.indexOf('.') == -1 || x.includes(' ') || x.indexOf('.') == email.length - 1) {
-            emailVal.style.opacity = '1';
+            emailVal.classList.remove('error-hidden');
             registerArray[1] = 'error';
             errorArray[1] = 'Error! Please enter a valid email.';
         } else {
@@ -114,12 +114,12 @@ window.onload = function() {
     password.addEventListener('blur', validatePassword);
     password.addEventListener('focus', clearPasswordError);
     function clearPasswordError(e) {
-        passwordVal.style.opacity = '0';
+        passwordVal.classList.add('error-hidden');
     }
     function validatePassword(e) {
         var x = password.value;
         if(x.length < 8 || !checkForletters(x) || !checkForNumbers(x) || checkForSpecialChar(x)) {
-            passwordVal.style.opacity = '1';
+            passwordVal.classList.remove('error-hidden');
             registerArray[2] = 'error';
             errorArray[2] = 'Error! Please enter a valid password.';
         } else {
@@ -133,12 +133,12 @@ window.onload = function() {
     confirmPassword.addEventListener('blur', validateConfirmPassword);
     confirmPassword.addEventListener('focus', clearConfirmPasswordError);
     function clearConfirmPasswordError(e) {
-        confirmPasswordVal.style.opacity = '0';
+        confirmPasswordVal.classList.add('error-hidden');
     }
     function validateConfirmPassword(e) {
         var x = confirmPassword.value;
         if(!(x == password.value)) {
-            confirmPasswordVal.style.opacity = '1';
+            confirmPasswordVal.classList.remove('error-hidden');
             registerArray[3] = 'error';
             errorArray[3]= 'Error! Please confirm password.';
         } else {
@@ -152,12 +152,12 @@ window.onload = function() {
     age.addEventListener('blur', validateAge);
     age.addEventListener('focus', clearAgeError);
     function clearAgeError(e) {
-        ageVal.style.opacity = '0';
+        ageVal.classList.add('error-hidden');
     }
     function validateAge(e) {
         var x = age.value;
         if(x < 18 || isNaN(x) || x.includes(',') || x.includes('.')) {
-            ageVal.style.opacity = '1';
+            ageVal.classList.remove('error-hidden');
             registerArray[4] = 'error';
             errorArray[4] = 'Error! Please enter a valid age.';
         } else {
@@ -171,12 +171,12 @@ window.onload = function() {
     phoneNumber.addEventListener('blur', validatePhoneNumber);
     phoneNumber.addEventListener('focus', clearPhoneNumberError);
     function clearPhoneNumberError(e) {
-        phoneNumberVal.style.opacity = '0';
+        phoneNumberVal.classList.add('error-hidden');
     }
     function validatePhoneNumber(e) {
         var x = phoneNumber.value;
         if(x.length < 7 || isNaN(x) || x.includes(',') || x.includes('.')) {
-            phoneNumberVal.style.opacity = '1';
+            phoneNumberVal.classList.remove('error-hidden');
             registerArray[5] = 'error';
             errorArray[5] = 'Error! Please enter a valid phone number.';
         } else {
@@ -190,12 +190,12 @@ window.onload = function() {
     address.addEventListener('blur', validateAddress);
     address.addEventListener('focus', clearAddressError);
     function clearAddressError(e) {
-        addressVal.style.opacity = '0';
+        addressVal.classList.add('error-hidden');
     }
     function validateAddress(e) {
         var x = address.value;
         if(x.length < 5 || !checkForletters(x) || !checkForNumbers(x) || x.indexOf(' ') == -1) {
-            addressVal.style.opacity = '1';
+            addressVal.classList.remove('error-hidden');
             registerArray[6] = 'error';
             errorArray[6] = 'Error! Please enter a valid address.';
         } else {
@@ -209,12 +209,12 @@ window.onload = function() {
     city.addEventListener('blur', validateCity);
     city.addEventListener('focus', clearCityError);
     function clearCityError(e) {
-        cityVal.style.opacity = '0';
+        cityVal.classList.add('error-hidden');
     }
     function validateCity(e) {
         var x = city.value;
         if(x.length < 3 || checkForSpecialChar(x)) {
-            cityVal.style.opacity = '1';
+            cityVal.classList.remove('error-hidden');
             registerArray[7] = 'error';
             errorArray[7] = 'Error! Please enter a valid city.';
         } else {
@@ -228,12 +228,12 @@ window.onload = function() {
     postalCode.addEventListener('blur', validatePostalCode);
     postalCode.addEventListener('focus', clearPostalCodeError);
     function clearPostalCodeError(e) {
-        postalCodeVal.style.opacity = '0';
+        postalCodeVal.classList.add('error-hidden');
     }
     function validatePostalCode(e) {
         var x = postalCode.value;
         if(x.length < 3 || checkForSpecialChar(x)) {
-            postalCodeVal.style.opacity = '1';
+            postalCodeVal.classList.remove('error-hidden');
             registerArray[8] = 'error';
             errorArray[8] = 'Error! Please enter a valid postal code';
         } else {
@@ -247,12 +247,12 @@ window.onload = function() {
     idNumber.addEventListener('blur', validateIdNumber);
     idNumber.addEventListener('focus', clearIdNumberError);
     function clearIdNumberError(e) {
-        idNumberVal.style.opacity = '0';
+        idNumberVal.classList.add('error-hidden');
     }
     function validateIdNumber(e) {
         var x = idNumber.value;
         if(x.length < 7 || x.length > 8 || isNaN(x) || x.includes('.')) {
-            idNumberVal.style.opacity = '1';
+            idNumberVal.classList.remove('error-hidden');
             registerArray[9] = 'error';
             errorArray[9] = 'Error! Please enter a valid id number.';
         } else {
