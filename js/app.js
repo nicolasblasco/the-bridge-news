@@ -294,7 +294,7 @@ window.onload = function() {
             modal.style.display = 'block';
             message.innerHTML = 'Please complete the form!';
         } else if(registerArray.includes("error")) {
-            modal.style.display = "block";
+            modal.style.display = 'block';
             var errorMessages = '<ul class ="list-modal">';
             for(var i = 0; i < errorArray.length; i++) {
                 if(errorArray[i] !== null && errorArray[i] !== '' && errorArray[i] !== undefined) {
@@ -309,7 +309,7 @@ window.onload = function() {
                     if(res.status === 200) {
                         return res.json();
                     } else {
-                        throw res.status;
+                        throw Error(res.status);
                     }
                 })
                 .then(function(data) {
@@ -318,7 +318,7 @@ window.onload = function() {
                     && postalCode.value !== '' && idNumber.value !== '') {
                         modal.style.display = 'block';  
                         titleMessage.innerHTML = 'Thank you! Your subscription was succesfully completed. Here is your information:';
-                        var registerMessages = '<ul class ="list-modal">';
+                        var registerMessages = '<ul class = "list-modal">';
                         for(var i = 0; i < registerArray.length; i++) {
                             registerMessages += '<li>' + registerArray[i] + '</li>';
                         }
@@ -331,8 +331,8 @@ window.onload = function() {
                     }  
                 })
                 .catch(function(err) {
-                    modal.style.display = "block";
-                    message.innerHTML = 'Error status: ' + err;
+                    modal.style.display = 'block';
+                    message.innerHTML = err;
                 }) 
         }
     }
@@ -356,7 +356,7 @@ window.onload = function() {
     //----- BONUS: Autocomplete name -----//
 
     var autoCompleteName = document.getElementById('name-input');
-    autoCompleteName.addEventListener('keydown',autoCompleteEvent);
+    autoCompleteName.addEventListener('keyup',autoCompleteEvent);
     autoCompleteName.addEventListener('focus',autoCompleteEvent);
     function autoCompleteEvent(e) {
         var text = e.target.value;
