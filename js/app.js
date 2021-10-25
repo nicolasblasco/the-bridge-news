@@ -355,9 +355,11 @@ window.onload = function() {
         if(text != null) {
             titleName.innerHTML = 'Hello ' + text + ' !';
         }
-
-    };
+    }
     window.onload = checkLocalStorage();
+    function localStorageCompleted() {
+
+    }
 
     //----- BONUS: Autocomplete name -----//
 
