@@ -353,22 +353,16 @@ window.onload = function() {
         city.value = !!localStorage.getItem('city') ? localStorage.getItem('city') : null;
         postalCode.value = !!localStorage.getItem('postal code') ? localStorage.getItem('postal code') : null;
         idNumber.value = !!localStorage.getItem('id number') ? localStorage.getItem('id number') : null;
-        /*
-        var text = localStorage.getItem('name');
-        var titleName = document.getElementById('h3-sub-page');
-        titleName.innerHTML = 'Hello ' + text + ' !'
-        */
     };
     window.onload = checkLocalStorage();
 
     //----- BONUS: Autocomplete name -----//
-    
+
     fullName.addEventListener('keyup',autoCompleteName);
     fullName.addEventListener('focus',autoCompleteName);
     function autoCompleteName(e) {
-        var text = e.target.value;
         var titleName = document.getElementById('h3-sub-page');
-        titleName.innerHTML = 'Hello ' + text + ' !';
+        titleName.innerHTML = 'Hello ' + fullName.value + ' !';
     }
 }
 
