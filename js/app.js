@@ -357,9 +357,6 @@ window.onload = function() {
         }
     }
     window.onload = checkLocalStorage();
-    function localStorageCompleted() {
-
-    }
 
     //----- BONUS: Autocomplete name -----//
 
@@ -371,6 +368,7 @@ window.onload = function() {
         var titleName = document.getElementById('h3-sub-page');
         titleName.innerHTML = 'Hello ' + text + ' !';
     }
+    
 }
 
 
