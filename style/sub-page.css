@@ -23,10 +23,13 @@ input {
     color: #1E2328;
 }
 
-.input-val {
+.error {
     font-family: sans-serif;
     font-size: 0.8em;
     color:#1E2328;
+}
+
+.error-hidden {
     opacity: 0;
 }
 
