@@ -35,38 +35,38 @@ window.onload = function() {
 
     // Letter validation
 
-    var letters = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+    var letters = 'abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ';
     var checkForletters = function(string) {
-    for(i = 0; i < letters.length;i++){
-    if(string.indexOf(letters[i]) > -1){
-        return true
+        for(i = 0; i < letters.length;i++) {
+            if(string.indexOf(letters[i]) > -1) {
+                return true;
+            }
         }
-    }
-    return false;
+        return false;
     }
 
     // Number validation
 
-    var numbers = "0123456789";
+    var numbers = '0123456789';
     var checkForNumbers = function(string) {
-    for(i = 0; i < numbers.length;i++){
-    if(string.indexOf(numbers[i]) > -1){
-        return true
+        for(i = 0; i < numbers.length;i++) {
+            if(string.indexOf(numbers[i]) > -1) {
+                return true;
+            }
         }
-    }
-    return false;
+        return false;
     }
 
     // Special character validation
 
     var specialChars = "<>@!#$%^&*()_+[]{}?:;|'\"\\,./~`-=";
     var checkForSpecialChar = function(string) {
-    for(i = 0; i < specialChars.length;i++){
-    if(string.indexOf(specialChars[i]) > -1){
-        return true
+        for(i = 0; i < specialChars.length;i++) {
+            if(string.indexOf(specialChars[i]) > -1) {
+                return true;
+            }
         }
-    }
-    return false;
+        return false;
     }
 
     //----- Functions for input validations -----//
@@ -267,7 +267,7 @@ window.onload = function() {
     var close = document.getElementById('close');
     close.addEventListener('click',closeModal);
     function closeModal(e) {
-        modal.style.display = "none";
+        modal.style.display = 'none';
     }
     
     //----- Register button: input validations & save user data to Local Storage -----//
@@ -291,7 +291,7 @@ window.onload = function() {
         var message = document.getElementById('message');
         var titleMessage = document.getElementById('title-message');
         if(registerArray.length == 0) {
-            modal.style.display = "block";
+            modal.style.display = 'block';
             message.innerHTML = 'Please complete the form!';
         } else if(registerArray.includes("error")) {
             modal.style.display = "block";
@@ -316,8 +316,8 @@ window.onload = function() {
                     if(fullName.value !== '' && email.value !== '' && password.value !== '' && confirmPassword.value !== '' 
                     && age.value !== '' && phoneNumber.value !== '' && address.value !== '' && city.value !== '' 
                     && postalCode.value !== '' && idNumber.value !== '') {
-                        modal.style.display = "block";  
-                        titleMessage.innerHTML = 'Thank you! Your subscription was succesfully completed. Here is your information:'
+                        modal.style.display = 'block';  
+                        titleMessage.innerHTML = 'Thank you! Your subscription was succesfully completed. Here is your information:';
                         var registerMessages = '<ul class ="list-modal">';
                         for(var i = 0; i < registerArray.length; i++) {
                             registerMessages += '<li>' + registerArray[i] + '</li>';
@@ -326,7 +326,7 @@ window.onload = function() {
                         message.innerHTML = registerMessages;
                         dataStorage();
                     } else {
-                        modal.style.display = "block";
+                        modal.style.display = 'block';
                         message.innerHTML = 'Please complete the form!';
                     }  
                 })
