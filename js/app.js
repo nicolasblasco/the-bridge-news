@@ -80,7 +80,7 @@ window.onload = function() {
     }
     function validateFullName(e) {
         var x = fullName.value;
-        if(x.length < 7 || x.indexOf(' ') <= 0 || x.indexOf(' ') == x.length -1) {
+        if(x.length < 7 || x.indexOf(' ') <= 0 || x.indexOf(' ') === x.length -1) {
             fullNameError.classList.remove('error-hidden');
             registerArray[0] = 'error';
             errorArray[0] = 'Error! Please enter a valid full name.';
@@ -99,7 +99,7 @@ window.onload = function() {
     }
     function validateEmail(e) {
         var x = email.value;
-        if( x.indexOf('@') <= 0 || x.indexOf('.') == -1 || x.includes(' ') || x.indexOf('.') == email.length - 1) {
+        if( x.indexOf('@') <= 0 || x.indexOf('.') === -1 || x.includes(' ') || x.indexOf('.') === email.length - 1) {
             emailError.classList.remove('error-hidden');
             registerArray[1] = 'error';
             errorArray[1] = 'Error! Please enter a valid email.';
@@ -137,7 +137,7 @@ window.onload = function() {
     }
     function validateConfirmPassword(e) {
         var x = confirmPassword.value;
-        if(!(x == password.value)) {
+        if(!(x === password.value)) {
             confirmPasswordError.classList.remove('error-hidden');
             registerArray[3] = 'error';
             errorArray[3]= 'Error! Please confirm password.';
@@ -194,7 +194,7 @@ window.onload = function() {
     }
     function validateAddress(e) {
         var x = address.value;
-        if(x.length < 5 || !checkForletters(x) || !checkForNumbers(x) || x.indexOf(' ') == -1) {
+        if(x.length < 5 || !checkForletters(x) || !checkForNumbers(x) || x.indexOf(' ') === -1) {
             addressError.classList.remove('error-hidden');
             registerArray[6] = 'error';
             errorArray[6] = 'Error! Please enter a valid address.';
@@ -290,7 +290,7 @@ window.onload = function() {
         var url = 'https://curso-dev-2021.herokuapp.com/newsletter?name='+fullName.value+'&email='+email.value+'&password='+password.value+'&confirmPassword='+confirmPassword.value+'&age='+age.value+'&phoneNumber='+phoneNumber.value+'&address='+address.value+'&city='+city.value+'&postalCode='+postalCode.value+'&id='+idNumber.value;
         var message = document.getElementById('message');
         var titleMessage = document.getElementById('title-message');
-        if(registerArray.length == 0) {
+        if(registerArray.length === 0) {
             modal.style.display = 'block';
             message.innerHTML = 'Please complete the form!';
         } else if(registerArray.includes("error")) {
