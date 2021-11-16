@@ -26,7 +26,7 @@ window.onload = function() {
     var postalCodeError = document.getElementById('postal-code-error');
     var idNumberError = document.getElementById('id-error');
 
-    //----- Arrays for form input values & errors -----// 
+    //----- Arrays for form input values & errors -----//
 
     var registerArray = [];
     var errorArray = [];
@@ -37,7 +37,7 @@ window.onload = function() {
 
     var letters = 'abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ';
     var checkForletters = function(string) {
-        for(i = 0; i < letters.length;i++) {
+        for(var i = 0; i < letters.length;i++) {
             if(string.indexOf(letters[i]) > -1) {
                 return true;
             }
@@ -49,7 +49,7 @@ window.onload = function() {
 
     var numbers = '0123456789';
     var checkForNumbers = function(string) {
-        for(i = 0; i < numbers.length;i++) {
+        for(var i = 0; i < numbers.length;i++) {
             if(string.indexOf(numbers[i]) > -1) {
                 return true;
             }
@@ -61,7 +61,7 @@ window.onload = function() {
 
     var specialChars = "<>@!#$%^&*()_+[]{}?:;|'\"\\,./~`-=";
     var checkForSpecialChar = function(string) {
-        for(i = 0; i < specialChars.length;i++) {
+        for(var i = 0; i < specialChars.length;i++) {
             if(string.indexOf(specialChars[i]) > -1) {
                 return true;
             }
@@ -71,7 +71,7 @@ window.onload = function() {
 
     //----- Functions for input validations -----//
 
-    // Full name validation 
+    // Full name validation
 
     fullName.addEventListener('blur', validateFullName);
     fullName.addEventListener('focus', clearFullNameError);
@@ -79,7 +79,7 @@ window.onload = function() {
         fullNameError.classList.add('error-hidden');
     }
     function validateFullName(e) {
-        var x = fullName.value; 
+        var x = fullName.value;
         if(x.length < 7 || x.indexOf(' ') <= 0 || x.indexOf(' ') == x.length -1) {
             fullNameError.classList.remove('error-hidden');
             registerArray[0] = 'error';
@@ -98,7 +98,7 @@ window.onload = function() {
         emailError.classList.add('error-hidden');
     }
     function validateEmail(e) {
-        var x = email.value; 
+        var x = email.value;
         if( x.indexOf('@') <= 0 || x.indexOf('.') == -1 || x.includes(' ') || x.indexOf('.') == email.length - 1) {
             emailError.classList.remove('error-hidden');
             registerArray[1] = 'error';
@@ -223,7 +223,7 @@ window.onload = function() {
         }
     }
 
-    // Postal code validation 
+    // Postal code validation
 
     postalCode.addEventListener('blur', validatePostalCode);
     postalCode.addEventListener('focus', clearPostalCodeError);
@@ -269,7 +269,7 @@ window.onload = function() {
     function closeModal(e) {
         modal.style.display = 'none';
     }
-    
+
     //----- Register button: input validations & save user data to Local Storage -----//
 
     var dataStorage = function () {
@@ -313,10 +313,10 @@ window.onload = function() {
                     }
                 })
                 .then(function(data) {
-                    if(fullName.value !== '' && email.value !== '' && password.value !== '' && confirmPassword.value !== '' 
-                    && age.value !== '' && phoneNumber.value !== '' && address.value !== '' && city.value !== '' 
+                    if(fullName.value !== '' && email.value !== '' && password.value !== '' && confirmPassword.value !== ''
+                    && age.value !== '' && phoneNumber.value !== '' && address.value !== '' && city.value !== ''
                     && postalCode.value !== '' && idNumber.value !== '') {
-                        modal.style.display = 'block';  
+                        modal.style.display = 'block';
                         titleMessage.innerHTML = 'Thank you! Your subscription was succesfully completed. Here is your information:';
                         var registerMessages = '<ul class = "list-modal">';
                         for(var i = 0; i < registerArray.length; i++) {
@@ -328,13 +328,13 @@ window.onload = function() {
                     } else {
                         modal.style.display = 'block';
                         message.innerHTML = 'Please complete the form!';
-                    }  
+                    }
                 })
                 .catch(function(err) {
                     modal.style.display = 'block';
                     message.innerHTML = err;
-                }) 
-                
+                })
+
         }
     }
 
@@ -369,7 +369,7 @@ window.onload = function() {
         var titleName = document.getElementById('h3-sub-page');
         titleName.innerHTML = 'Hello ' + text + ' !';
     }
-    
+
 }
 
 
