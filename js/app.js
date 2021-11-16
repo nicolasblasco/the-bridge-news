@@ -37,7 +37,7 @@ window.onload = function() {
 
     var letters = 'abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ';
     var checkForletters = function(string) {
-        for(var i = 0; i < letters.length;i++) {
+        for(var i = 0; i < letters.length; i++) {
             if(string.indexOf(letters[i]) > -1) {
                 return true;
             }
@@ -49,7 +49,7 @@ window.onload = function() {
 
     var numbers = '0123456789';
     var checkForNumbers = function(string) {
-        for(var i = 0; i < numbers.length;i++) {
+        for(var i = 0; i < numbers.length; i++) {
             if(string.indexOf(numbers[i]) > -1) {
                 return true;
             }
@@ -61,7 +61,7 @@ window.onload = function() {
 
     var specialChars = "<>@!#$%^&*()_+[]{}?:;|'\"\\,./~`-=";
     var checkForSpecialChar = function(string) {
-        for(var i = 0; i < specialChars.length;i++) {
+        for(var i = 0; i < specialChars.length; i++) {
             if(string.indexOf(specialChars[i]) > -1) {
                 return true;
             }
@@ -99,7 +99,7 @@ window.onload = function() {
     }
     function validateEmail(e) {
         var x = email.value;
-        if( x.indexOf('@') <= 0 || x.indexOf('.') === -1 || x.includes(' ') || x.indexOf('.') === email.length - 1) {
+        if(x.indexOf('@') <= 0 || x.indexOf('.') === -1 || x.includes(' ') || x.indexOf('.') === email.length - 1) {
             emailError.classList.remove('error-hidden');
             registerArray[1] = 'error';
             errorArray[1] = 'Error! Please enter a valid email.';
@@ -333,8 +333,7 @@ window.onload = function() {
                 .catch(function(err) {
                     modal.style.display = 'block';
                     message.innerHTML = err;
-                })
-
+                });
         }
     }
 
