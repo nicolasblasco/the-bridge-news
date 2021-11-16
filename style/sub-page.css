@@ -52,6 +52,7 @@ input {
     flex-direction: column;
     padding: 1em;
     height: 4.5em;
+    border: 0em;
 }
 
 #button {
