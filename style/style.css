@@ -21,7 +21,7 @@ h2 {
 
 h2, h3 {
     font-size: 1.2em;
-    color: #FFFFFF; 
+    color: #FFFFFF;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
@@ -57,7 +57,7 @@ header {
     align-items: center;
     padding: 0 2em;
     background-color: #1E2328;
-    color: #FFFFFF; 
+    color: #FFFFFF;
 }
 
 #vbar {
@@ -80,7 +80,7 @@ nav ul {
     justify-content: space-evenly;
     align-items: center;
     list-style: none;
-    height: 2em;  
+    height: 2em;
 }
 
 nav ul li {
@@ -130,7 +130,7 @@ nav ul li {
     border: 1px #1E2328 solid;
 }
 
-/*----- Sub Content -----*/ 
+/*----- Sub Content -----*/
 
 #sub-content {
     display: flex;
